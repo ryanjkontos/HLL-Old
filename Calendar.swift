@@ -5,7 +5,7 @@
 //  Created by Ryan Kontos on 2/5/18.
 //  Copyright © 2018 Ryan Kontos. All rights reserved.
 //
-// Reads the calendar, figures out which event today is the closest to finishing and outputs info to the calData struct. Also contains functions that return the data. (This file is a mess and I hate dealing with it.)
+// Reads the calendar, figures out which current event is the closest to finishing and outputs info to the calData struct. Also contains functions that return the data. (This file is a mess and I hate dealing with it.)
 //
 
 import Foundation
@@ -140,7 +140,6 @@ class Calendar {
             
             
             if difFromStart > 0 {
-                print("Not started yet I guess?")
                 calData.titleOfPreviousEvent = calData.titleOfCurrentEvent
                 calData.titleOfCurrentEvent = nil
                 calData.endTimeOfCurrentEvent = nil
@@ -206,7 +205,7 @@ class Calendar {
             
             if formatForDisplay == true {
                 if difstring == "1" {
-                    difstring = "1 minute"
+                    difstring = "less than 1 minute"
                 } else {
                   difstring = "\(difstring!) minutes"
                 }
@@ -243,11 +242,8 @@ class Calendar {
         } else {
             returnVal = false
             print("Menu Bar not in sync, correcting")
-            
         }
     
-    print("Calced: \(difstring)")
-        print("Gotten: \(currentMBT)")
     
        return returnVal
     }

@@ -12,8 +12,6 @@ import HotKey
 import Carbon
 //import Sparkle
 
-
-
 class StatusMenuController: NSObject {
     
     var fastTimer: Timer!
@@ -153,11 +151,10 @@ class StatusMenuController: NSObject {
         
         
         
-        fastTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(menuCheck), userInfo: nil, repeats: true)
+        fastTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(menuCheck), userInfo: nil, repeats: true)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateSettings), name: Notification.Name("settingChanged"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.autoNotify), name: Notification.Name("autoNotify"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.autoNotify), name: Notification.Name("updateMenuItems"), object: nil)
         
     }
     
@@ -172,15 +169,10 @@ class StatusMenuController: NSObject {
     }
     
     @objc func menuCheck() {
-        
-        
-
+      
         let date = Date()
         let calendar = NSCalendar.current
         let seconds = calendar.component(.second, from: date)
-        
-
-        
         if seconds == 0 {
             routineMenuBarUpdate(isStart: true)
         } else if seconds != 0 {
@@ -202,10 +194,18 @@ class StatusMenuController: NSObject {
         print("4")
     }
     
-    
-    
-    
     @objc func routineMenuBarUpdate(isStart: Bool) {
+        
+        if isStart == true {
+        
+        if OutputHandler.outputArchive.predictedMenuBarText != nil {
+            let myString = OutputHandler.outputArchive.predictedMenuBarText!
+            let myAttribute = [ NSAttributedStringKey.font: NSFont(name: "Helvetica Neue", size: 13.0)! ]
+            let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
+            statusItem.attributedTitle = myAttrString
+            
+            }
+        }
         
         let _ = calendar.updateCalendarData()
         
@@ -246,6 +246,4 @@ class StatusMenuController: NSObject {
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         NSApplication.shared.terminate(self)
     }
-    
-    
 }

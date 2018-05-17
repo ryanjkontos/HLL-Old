@@ -39,6 +39,22 @@ class MCHS {
             newName = "History"
         }
         
+        if inputName.range(of:"History") != nil {
+            newName = "History"
+        }
+        
+        if inputName.range(of:"Music") != nil {
+            newName = "Music"
+        }
+        
+        if inputName.range(of:"Design") != nil {
+            newName = "DNT"
+        }
+        
+        if inputName.range(of:"Design") != nil {
+            newName = "DNT"
+        }
+
         if inputName.range(of:"Maths") != nil {
             newName = "Mathematics"
         }

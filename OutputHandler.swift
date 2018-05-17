@@ -15,10 +15,13 @@ let notify = HLLNotification()
 var autoNoto = automaticNotifcation()
 var menuText = ""
 var menuTextMin = ""
+var PredictedMenuText = ""
+var PredictedMenuTextMin = ""
 var finalMenuText = ""
 let autoNotify = automaticNotifcation()
 var firstLine = ""
 var secondLine = ""
+var predictedNextMenuBarTextFinalString: String?
 
 class OutputHandler {
 
@@ -32,29 +35,19 @@ class OutputHandler {
             if currentEventTitle != nil {
               let minutesRemainingOfCurrentEvent = calendar.minutesRemainingOfCurrentEvent(formatForDisplay: true)
                firstLine = "\(currentEventTitle!) ends in \(minutesRemainingOfCurrentEvent!)."
-                
-               let minRNF = calendar.minutesRemainingOfCurrentEvent(formatForDisplay: false)!
-            
-                if minRNF == "1" {
-                  menuText = "1 min"
-                } else {
-                    menuText = "\(minRNF) mins"
-                }
                 let nextName = calendar.titleOfEvent(which: "Next")
                 if nextName == nil {
-                  secondLine = "You have no more upcoming events."
+                  secondLine = "No upcoming events."
                 } else {
-                  secondLine = "You have \(nextName!) next."
+                    secondLine = "Next: \(nextName!)."
                 }
             } else {
-               firstLine = "No running event found in your calendar."
+               firstLine = "No events are running right now."
                 secondLine = ""
-                 menuText = ""
             }
         } else {
             // No calendar access
             firstLine = "How Long Left does not have calendar access."
-             menuText = "No cal access"
             
         }
         return [firstLine, secondLine]
@@ -63,13 +56,6 @@ class OutputHandler {
     
     func outputMenuBar(isStartMin: Bool) -> String {
         
-        
-        if isStartMin == true {
-            let date = Date()
-            let calendar = NSCalendar.current
-            let seconds = calendar.component(.second, from: date)
-            print("Sec6: \(seconds)")
-        }
         
         var finalNum = ""
         var currentE = ""
@@ -80,6 +66,7 @@ class OutputHandler {
             let currentEventTitle = calendar.titleOfEvent(which: "Current")
             if currentEventTitle != nil {
                 let minRNF = calendar.minutesRemainingOfCurrentEvent(formatForDisplay: false)!
+                let predictedRemaining = Int(minRNF)! - 1
                 finalNum = minRNF
                 currentE = currentEventTitle!
                 
@@ -96,46 +83,58 @@ class OutputHandler {
                     menuTextMin = "<1 min"
                     menuText = "<1 minute"
                     
+                    predictedNextMenuBarTextFinalString = nil
+                    
                 } else {
                     menuText = "\(minRNF) minutes"
                     menuTextMin = "\(minRNF) mins"
+                    
+                    PredictedMenuText = "\(predictedRemaining) minutes"
+                    PredictedMenuTextMin = "\(predictedRemaining) mins"
+                    
+                    
+                    
                 }
                 let nextName = calendar.titleOfEvent(which: "Current")
                 
                 switch menuBarFormat {
                 case "10 mins":
                     finalMenuText = menuTextMin
+                    predictedNextMenuBarTextFinalString = PredictedMenuTextMin
                 case "10 mins left":
                     finalMenuText = "\(menuTextMin) left"
+                    predictedNextMenuBarTextFinalString = "\(PredictedMenuTextMin) left"
                 case "10 minutes left":
                     finalMenuText = "\(menuText) left"
+                    predictedNextMenuBarTextFinalString = "\(PredictedMenuText) left"
                 case "Name: 10 mins left":
                     finalMenuText = "\(nextName!): \(menuTextMin) left"
                 default:
                     finalMenuText = menuTextMin
+                    predictedNextMenuBarTextFinalString = PredictedMenuTextMin
                 }
                 
             } else {
+                predictedNextMenuBarTextFinalString = nil
                 finalMenuText = ""
                 menuText = ""
                 finalNum = ""
                 outputArchive.eventName = ""
             }
         } else {
-            menuText = "No cal access"
+            predictedNextMenuBarTextFinalString = nil
+            finalMenuText = "No cal access"
             
         }
         
         if outputArchive.currentMenuText == "1", isStartMin == true {
             finalMenuText = "Done"
-            
-            
             autoNotify.sendDoneNotification()
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
              NotificationCenter.default.post(name: Notification.Name("settingChanged"), object: nil)
             }
         }
-        
+    outputArchive.predictedMenuBarText = predictedNextMenuBarTextFinalString
     outputArchive.currentMenuText = finalNum
     outputArchive.eventName = currentE
      
@@ -151,5 +150,6 @@ class OutputHandler {
     struct outputArchive {
         static var currentMenuText = ""
         static var eventName = ""
+        static var predictedMenuBarText: String?
     }
 }
