@@ -23,29 +23,27 @@ var menuBar = StatusMenuController()
 class Preferences: NSWindowController {
     override func windowDidLoad() {
         window?.styleMask.remove(.resizable)
-       
-    }
-    @IBAction func lol(_ sender: Any) {
     }
 }
 
 
-
-
 class Prefs: NSViewController {
     
-    
-    
     @IBOutlet weak var WelcomePrefsLaunchAtLogin: NSButton!
-    
     @IBOutlet weak var calendarsUseAll: NSButton!
-    
     @IBOutlet weak var calendarsSelectPopUp: NSPopUpButton!
-    
     @IBOutlet weak var WelcomePrefsMenuBar: NSPopUpButton!
+    
     override func viewWillAppear() {
         
-         NSApp.activate(ignoringOtherApps: true)
+        let menuBarFormat = defaults.string(forKey: "menuBarFormat")
+        
+        for items in WelcomePrefsMenuBar.itemArray {
+            if items.title == menuBarFormat {
+                WelcomePrefsMenuBar.selectItem(withTitle: items.title)
+            }
+        }
+        NSApp.activate(ignoringOtherApps: true)
         
         if LaunchAtLogin.isEnabled == true {
             if WelcomePrefsLaunchAtLogin.state.rawValue == 0 {

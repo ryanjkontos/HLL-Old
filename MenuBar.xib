@@ -26,10 +26,10 @@
         <customObject id="r1m-k1-Qax" customClass="SUUpdater"/>
         <menu id="n3t-Qc-pUZ">
             <items>
-                <menuItem title="Countdown text" enabled="NO" id="T6O-3E-MSc">
+                <menuItem title="MB Text Line 1" enabled="NO" id="T6O-3E-MSc">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Next Event text" hidden="YES" enabled="NO" id="RGx-T1-Asm">
+                <menuItem title="MB Text Line 2" hidden="YES" enabled="NO" id="RGx-T1-Asm">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="gyl-T2-yjU"/>

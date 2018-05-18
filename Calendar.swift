@@ -222,6 +222,8 @@ class Calendar {
     
     
   func isMenuBarInSync() -> Bool {
+    
+    
      let endTime = calData.endTimeOfCurrentEvent
     var returnVal: Bool
     var dif: Int?

@@ -123,7 +123,7 @@
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jEJ-Zs-9wa">
                                 <rect key="frame" x="232" y="280" width="137" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="1.0 (Beta 2)" id="f3n-pf-BGI">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="1.0 (Beta 3)" id="f3n-pf-BGI">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -189,8 +189,12 @@
                                     <action selector="next:" target="3VW-Vh-75b" id="adM-zx-fX0"/>
                                 </connections>
                             </button>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="55b-95-QiW">
+                                <rect key="frame" x="23" y="59" width="555" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </box>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5J-zY-dWy">
-                                <rect key="frame" x="55" y="117" width="491" height="14"/>
+                                <rect key="frame" x="55" y="115" width="491" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="You can also trigger this notification by pressing the Option and W keys at the same time." id="DP8-Ns-QtJ">
                                     <font key="font" metaFont="smallSystem"/>
@@ -198,10 +202,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="55b-95-QiW">
-                                <rect key="frame" x="23" y="59" width="555" height="5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </box>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mbb-pG-2d0">
                                 <rect key="frame" x="66" y="129" width="469" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -371,7 +371,7 @@
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Rv2-CZ-XIE">
-                                <rect key="frame" x="23" y="59" width="555" height="5"/>
+                                <rect key="frame" x="23" y="59" width="555" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhO-ho-hPh">
@@ -481,11 +481,14 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mV6-Ua-9Y2">
                                 <rect key="frame" x="216" y="155" width="169" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="10 mins" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="X06-p4-sKQ" id="cEr-wU-DDN">
+                                <popUpButtonCell key="cell" type="push" title="Off" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="1jh-s9-DVJ" id="cEr-wU-DDN">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="2ZC-AP-u1Y">
                                         <items>
+                                            <menuItem title="Off" id="1jh-s9-DVJ">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
                                             <menuItem title="10 mins" state="on" id="X06-p4-sKQ"/>
                                             <menuItem title="10 mins left" id="dMf-Ox-x7O">
                                                 <modifierMask key="keyEquivalentModifierMask"/>

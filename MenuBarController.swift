@@ -123,39 +123,15 @@ class StatusMenuController: NSObject {
     
     @objc func launchApp() {
         defaults.set("1.0b1", forKey: "latestVersion")
-        
-        
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
         icon?.isTemplate = true
         statusItem.image = icon
         statusItem.menu = statusMenu
-        
         hotKey = HotKey(keyCombo: KeyCombo(key: .w, modifiers: [.option]))
-        
-        
-        
-     /*   let date = Date()
-        let calendar = NSCalendar.current
-        var components = calendar.dateComponents([.era, .year, .month, .day, .hour, .minute], from: date)
-        guard let minute = components.minute else { return }
-        components.second = 0
-        components.minute = minute + 1
-        guard let nextMinute = calendar.date(from: components) else { return }
-        let timer = Timer(fire: nextMinute, interval: 60, repeats: true) { [weak self] timer in
-            self?.routineMenuBarUpdateStartMin() }
-        RunLoop.main.add(timer, forMode: .defaultRunLoopMode)
-        
-        */
-        
         routineMenuBarUpdate(isStart: false)
-        
-        
-        
         fastTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(menuCheck), userInfo: nil, repeats: true)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateSettings), name: Notification.Name("settingChanged"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.autoNotify), name: Notification.Name("autoNotify"), object: nil)
-        
     }
     
     @objc func updateMenuItems() {
@@ -185,6 +161,7 @@ class StatusMenuController: NSObject {
     }
     
     @objc func updateSettings() {
+        OutputHandler.outputArchive.predictedMenuBarText = nil
         print("1")
         routineMenuBarUpdate(isStart: false)
     }

@@ -60,6 +60,8 @@ class OutputHandler {
         var finalNum = ""
         var currentE = ""
         
+        let menuBarFormat = defaults.string(forKey: "menuBarFormat")
+        
         if calendar.getCalendarAccess() == true {
             
             
@@ -70,7 +72,6 @@ class OutputHandler {
                 finalNum = minRNF
                 currentE = currentEventTitle!
                 
-                 let menuBarFormat = defaults.string(forKey: "menuBarFormat")
                 
                 if isStartMin == true {
                     if autoNoto.countdownNotification(timeRemaining: Int(minRNF)!) == true {
@@ -109,6 +110,8 @@ class OutputHandler {
                     predictedNextMenuBarTextFinalString = "\(PredictedMenuText) left"
                 case "Name: 10 mins left":
                     finalMenuText = "\(nextName!): \(menuTextMin) left"
+                case "Off":
+                    finalMenuText = ""
                 default:
                     finalMenuText = menuTextMin
                     predictedNextMenuBarTextFinalString = PredictedMenuTextMin
@@ -132,8 +135,8 @@ class OutputHandler {
             autoNotify.sendDoneNotification()
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
              NotificationCenter.default.post(name: Notification.Name("settingChanged"), object: nil)
+                }
             }
-        }
     outputArchive.predictedMenuBarText = predictedNextMenuBarTextFinalString
     outputArchive.currentMenuText = finalNum
     outputArchive.eventName = currentE
@@ -142,8 +145,10 @@ class OutputHandler {
             print("")
         }
         
-        
-    return finalMenuText
+        if defaults.string(forKey: "menuBarFormat") == "Off" {
+            finalMenuText = ""
+        }
+        return finalMenuText
     }
     
     
