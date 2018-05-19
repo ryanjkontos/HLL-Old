@@ -48,7 +48,7 @@ class OutputHandler {
         } else {
             // No calendar access
             firstLine = "How Long Left does not have calendar access."
-            
+            secondLine = "Please grant it in System Preferences."
         }
         return [firstLine, secondLine]
     }
@@ -145,7 +145,7 @@ class OutputHandler {
             print("")
         }
         
-        if defaults.string(forKey: "menuBarFormat") == "Off" {
+        if defaults.string(forKey: "menuBarFormat") == "Off", finalMenuText != "No cal access"  {
             finalMenuText = ""
         }
         return finalMenuText

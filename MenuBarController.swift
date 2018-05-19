@@ -10,7 +10,6 @@
 import Cocoa
 import HotKey
 import Carbon
-//import Sparkle
 
 class StatusMenuController: NSObject {
     
@@ -19,7 +18,6 @@ class StatusMenuController: NSObject {
     let outputhandler = OutputHandler()
     
     @IBOutlet weak var menuOutput1: NSMenuItem!
-    
     
     @IBOutlet weak var menuOutput2: NSMenuItem!
     
@@ -121,6 +119,7 @@ class StatusMenuController: NSObject {
     }
     
     
+    
     @objc func launchApp() {
         defaults.set("1.0b1", forKey: "latestVersion")
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
@@ -132,6 +131,19 @@ class StatusMenuController: NSObject {
         fastTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(menuCheck), userInfo: nil, repeats: true)
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateSettings), name: Notification.Name("settingChanged"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.autoNotify), name: Notification.Name("autoNotify"), object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.EKChange),
+            name: .EKEventStoreChanged,
+            object: nil)
+        
+        
+    }
+    
+    @objc func EKChange() {
+        print("Event change detected!")
+        routineMenuBarUpdate(isStart: false)
     }
     
     @objc func updateMenuItems() {
@@ -176,6 +188,7 @@ class StatusMenuController: NSObject {
         if isStart == true {
         
         if OutputHandler.outputArchive.predictedMenuBarText != nil {
+            
             let myString = OutputHandler.outputArchive.predictedMenuBarText!
             let myAttribute = [ NSAttributedStringKey.font: NSFont(name: "Helvetica Neue", size: 13.0)! ]
             let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
@@ -218,7 +231,6 @@ class StatusMenuController: NSObject {
         notify.secondLine = outputArray[1]
         notify.send()
     }
-    
     
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         NSApplication.shared.terminate(self)

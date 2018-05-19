@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF451A6E20AEF8D300757384 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53040920A286D00025216F /* LaunchAtLogin.framework */; };
+		BF451A6F20AEF8D300757384 /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF53040920A286D00025216F /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF47A1A620A1904E00D98F4A /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47A1A520A1904E00D98F4A /* WelcomeController.swift */; };
 		BF53040A20A286D10025216F /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53040920A286D00025216F /* LaunchAtLogin.framework */; };
 		BF72ED1D20AA681A00632763 /* MCHS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF72ED1C20AA681A00632763 /* MCHS.swift */; };
@@ -21,18 +23,27 @@
 		BF853E33209D88B1003374CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E30209D88B1003374CC /* AppDelegate.swift */; };
 		BF853E37209D88C2003374CC /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E34209D88C1003374CC /* MenuBarController.swift */; };
 		BF853E39209D88C2003374CC /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E36209D88C1003374CC /* PreferencesController.swift */; };
-		BF9A015520A8F2770026AA98 /* LaunchAtLogin.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BF9A015420A8F2760026AA98 /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFA81E6120A5B34100C4DB6C /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA81E6020A5B34100C4DB6C /* Welcome.storyboard */; };
 		BFC2A55320A5DDA50015C97D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC2A55220A5DDA40015C97D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		BF451A6C20AEF8A800757384 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF853E2D209D85AC003374CC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BF451A6F20AEF8D300757384 /* LaunchAtLogin.framework in Embed Frameworks */,
 				BF853E2C209D85AC003374CC /* HotKey.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -46,16 +57,6 @@
 			files = (
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFFC560520A2609100886046 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BF9A015520A8F2770026AA98 /* LaunchAtLogin.framework in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -90,6 +91,7 @@
 			files = (
 				BF853E2B209D85AC003374CC /* HotKey.framework in Frameworks */,
 				BF53040A20A286D10025216F /* LaunchAtLogin.framework in Frameworks */,
+				BF451A6E20AEF8D300757384 /* LaunchAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +136,8 @@
 				BF914AD62099393D00927006 /* Resources */,
 				BFA2AC7C209B21C400FB4490 /* Embed App Extensions */,
 				BF853E2D209D85AC003374CC /* Embed Frameworks */,
-				BFFC560520A2609100886046 /* CopyFiles */,
 				BF9A015320A8F18F0026AA98 /* ShellScript */,
+				BF451A6C20AEF8A800757384 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -362,6 +364,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -370,7 +373,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left-BetaTest";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "How Long Left?-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -391,6 +394,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -399,7 +403,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left-BetaTest";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "How Long Left?-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

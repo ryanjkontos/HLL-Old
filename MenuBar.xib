@@ -19,11 +19,9 @@
                 <outlet property="menuOutput1" destination="T6O-3E-MSc" id="9y5-jU-hIs"/>
                 <outlet property="menuOutput2" destination="RGx-T1-Asm" id="AeM-qS-jAA"/>
                 <outlet property="statusMenu" destination="n3t-Qc-pUZ" id="HwH-LX-rvH"/>
-                <outlet property="updater" destination="r1m-k1-Qax" id="YDg-HK-YDX"/>
             </connections>
         </customObject>
         <customObject id="dxx-1D-bhR" customClass="TimeTo" customModule="How_Long_Left_" customModuleProvider="target"/>
-        <customObject id="r1m-k1-Qax" customClass="SUUpdater"/>
         <menu id="n3t-Qc-pUZ">
             <items>
                 <menuItem title="MB Text Line 1" enabled="NO" id="T6O-3E-MSc">

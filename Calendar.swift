@@ -58,6 +58,8 @@ class Calendar {
     
     func updateCalendarData() -> Bool {
         
+        print("Reading from Calendar")
+        
         var returnVal = false
         
         eventStore = EKEventStore()
@@ -135,8 +137,6 @@ class Calendar {
             let currentEKEvent = eventsArray[timesIndex!]
             
             let difFromStart = Int(CFDateGetTimeIntervalSinceDate(currentEKEvent.startDate as CFDate, now as CFDate))
-            
-            print("DFS: \(difFromStart)")
             
             
             if difFromStart > 0 {
