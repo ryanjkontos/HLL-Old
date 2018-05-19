@@ -80,7 +80,6 @@
 		BFC2A55220A5DDA40015C97D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFEB559120AFE919008752FA /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LaunchAtLogin.framework; sourceTree = "<group>"; };
 		BFEB559220AFE919008752FA /* HotKey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HotKey.framework; sourceTree = "<group>"; };
-		BFEB559720AFEC08008752FA /* How Long Left?.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "How Long Left?.app"; path = "../../../Library/Developer/Xcode/DerivedData/How_Long_Left?-eruudaenkkvrnkakkgxsgidkqawa/Build/Products/Debug/How Long Left?.app"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +145,6 @@
 		BFEB559020AFE919008752FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BFEB559720AFEC08008752FA /* How Long Left?.app */,
 				BFEB559120AFE919008752FA /* LaunchAtLogin.framework */,
 				BFEB559220AFE919008752FA /* HotKey.framework */,
 			);
