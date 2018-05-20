@@ -12,11 +12,28 @@ import Foundation
 class automaticNotifcation {
    
     func countdownNotification(timeRemaining: Int) -> Bool {
+        
+        
         var returnVal = false
         
-        let autoNotifyTimes = [15, 5, 10, 1]
+        var setTimes = [Int]()
         
-        for autoTime in autoNotifyTimes {
+        
+        if Int(defaults.string(forKey: "autoAlert10")!) == 1 {
+            setTimes.append(10)
+        }
+        
+        if Int(defaults.string(forKey: "autoAlert5")!) == 1 {
+            setTimes.append(5)
+        }
+        
+        if Int(defaults.string(forKey: "autoAlert1")!) == 1 {
+            setTimes.append(1)
+        }
+        
+        
+        
+        for autoTime in setTimes {
             if autoTime == timeRemaining {
               returnVal = true
             }
@@ -25,6 +42,11 @@ class automaticNotifcation {
     }
     
     func sendDoneNotification() {
+        
+        if Int(defaults.string(forKey: "autoAlert0")!) == 1 {
+
+
+        
     
         // This function is called by the output handler to prepare and deliver a notification when an event has finished.
         
@@ -38,7 +60,6 @@ class automaticNotifcation {
         
         notify.send()
         
+        }
     }
-    
-    
 }

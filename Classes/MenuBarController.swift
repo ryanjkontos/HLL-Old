@@ -63,6 +63,10 @@ class StatusMenuController: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     @IBAction func welcomeTest(_ sender: NSMenuItem) {
+        showWelcomeView()
+    }
+    
+    func showWelcomeView() {
         var welcomeWindowController : NSWindowController!
         
         let welcomeStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Welcome"), bundle: nil)
@@ -95,21 +99,16 @@ class StatusMenuController: NSObject {
             notify.send()
         }
         
+        
       /*  UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
         UserDefaults.standard.synchronize() */
     
         let latestversion = (defaults.string(forKey: "setupComplete"))
         
-        if latestversion == nil {
-    
-            
-            var welcomeWindowController : NSWindowController!
-            let welcomeStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Welcome"), bundle: nil)
-            welcomeWindowController = welcomeStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Welcome")) as! NSWindowController
-            // make initial settings before showing the window
-            welcomeWindowController.showWindow(self)
-            NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
-            
+        NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
+        
+        if latestversion != "1.0b3" {
+        showWelcomeView()
             
         } else {
         
@@ -119,14 +118,29 @@ class StatusMenuController: NSObject {
     }
     
     
+    func setHotKey() {
+        
+       let hotKeySetValue = (defaults.string(forKey: "setHotKey")!)
+        
+        if hotKeySetValue == "0" {
+            
+          hotKey = HotKey(keyCombo: KeyCombo(key: .w, modifiers: [.option]))
+        } else {
+            
+            hotKey = HotKey(keyCombo: KeyCombo(key: .t, modifiers: [.command]))
+        }
+        
+    }
+    
+    
     
     @objc func launchApp() {
-        defaults.set("1.0b1", forKey: "latestVersion")
+        setHotKey()
+        defaults.set("1.0b3", forKey: "latestVersion")
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
         icon?.isTemplate = true
         statusItem.image = icon
         statusItem.menu = statusMenu
-        hotKey = HotKey(keyCombo: KeyCombo(key: .w, modifiers: [.option]))
         routineMenuBarUpdate(isStart: false)
         fastTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(menuCheck), userInfo: nil, repeats: true)
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateSettings), name: Notification.Name("settingChanged"), object: nil)
@@ -173,6 +187,7 @@ class StatusMenuController: NSObject {
     }
     
     @objc func updateSettings() {
+        setHotKey()
         OutputHandler.outputArchive.predictedMenuBarText = nil
         print("1")
         routineMenuBarUpdate(isStart: false)

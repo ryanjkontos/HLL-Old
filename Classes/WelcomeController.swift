@@ -18,9 +18,15 @@ class WelcomeWindow: NSWindowController {
     override func windowDidLoad() {
         window?.styleMask.remove(.resizable)
         NSApp.activate(ignoringOtherApps: true)
-        
+       
+
     }
+    
+    
+    
+    
 }
+
 
 class tabView: NSTabViewController {
     
@@ -61,10 +67,22 @@ class welcomeNav: NSViewController {
     
 }
 
+
+class Welcome_Whatsnew: welcomeNav {
+   
+    @IBAction func back(_ sender: Any) {
+        navTo(page: 0)
+    }
+    
+}
+
 class Welcome_WelcometoHowLongLeft: welcomeNav {
     
-    // 1
+    @IBAction func whatsnewbutton(_ sender: NSButton) {
+        navTo(page: 7)
+    }
     
+    // 1
     
     @IBAction func next(_ sender: Any) {
         navTo(page: 1)
@@ -81,61 +99,34 @@ class Welcome_LetsGetStarted: welcomeNav {
     
         
     @IBAction func next(_ sender: Any) {
-        navTo(page: 4)
+        navTo(page: 3)
     }
 }
 
 class Welcome_CalendarAccess: welcomeNav {
+    @IBOutlet weak var nextbuttonitem: NSButton!
     
-    var calAccess = false
-    
-    @IBAction func back(_ sender: NSButton) {
+    @IBAction func back(_ sender: Any) {
         navTo(page: 1)
     }
-    
     
     @IBAction func next(_ sender: Any) {
         navTo(page: 4)
     }
-
-    @IBOutlet weak var calAccessStatusText: NSTextField!
-    @IBOutlet weak var calAccessIndicator: NSProgressIndicator!
-    var cal = Calendar()
-    var calAccessTimer: Timer!
-    @IBOutlet weak var calAccessContinue: NSButton!
-    @IBOutlet weak var calAccessSubtitle: NSTextField!
     
-    override func viewWillAppear() {
-        calAccess = cal.getCalendarAccess()!
-        calAccessContinue.isEnabled = false
-    
-    calAccessTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
-        
-        calAccessIndicator.isHidden = true
-        update()
+    @IBAction func shortcut(_ sender: NSButton) {
+      nextbuttonitem.isEnabled = true
+      defaults.set(sender.identifier!, forKey: "setHotKey")
+        print(sender.identifier!)
     }
     
- 
-    @objc func update() {
-        if cal.getCalendarAccess() == true {
-            calAccessStatusText.stringValue = "Make sure you have given How Long Left access to your calendar."
-            calAccessIndicator.isHidden = true
-            calAccessContinue.isEnabled = true
-            calAccessSubtitle.isHidden = true
-            calAccessTimer.invalidate()
-        } else {
-            calAccessStatusText.stringValue = "To continue, please give How Long Left access to your calendar."
-            calAccessIndicator.isHidden = false
-            calAccessIndicator.startAnimation(nil)
-        }
-    }
     
 }
     
     class Welcome_Calendars: welcomeNav {
         
         @IBAction func back(_ sender: NSButton) {
-            navTo(page: 1)
+            navTo(page: 2)
         }
         @IBAction func next(_ sender: Any) {
             navTo(page: 5)
@@ -265,7 +256,7 @@ class Welcome_YoureAllSet: welcomeNav {
     }
     
     @IBAction func Done(_ sender: NSButton) {
-        defaults.set("1.0", forKey: "setupComplete")
+        defaults.set("1.0b3", forKey: "setupComplete")
         NotificationCenter.default.post(name: Notification.Name("setupComplete"), object: nil)
       self.view.window?.close()
     }

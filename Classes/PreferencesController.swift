@@ -34,7 +34,55 @@ class Prefs: NSViewController {
     @IBOutlet weak var calendarsSelectPopUp: NSPopUpButton!
     @IBOutlet weak var WelcomePrefsMenuBar: NSPopUpButton!
     
+    @IBOutlet weak var autoAlert10: NSButton!
+    @IBOutlet weak var autoAlert5: NSButton!
+    @IBOutlet weak var autoAlert1: NSButton!
+    @IBOutlet weak var autoAlert0: NSButton!
+    
+    @IBOutlet weak var optionWbutton: NSButton!
+    @IBOutlet weak var commandTButton: NSButton!
+    
+    
     override func viewWillAppear() {
+        
+        let hotKeySetValue = (defaults.string(forKey: "setHotKey")!)
+        if hotKeySetValue == "0" {
+            optionWbutton.setNextState()
+        } else {
+            commandTButton.setNextState()
+        }
+        
+        let tensetting = Int(defaults.string(forKey: "autoAlert10")!)!
+        
+        let fivesetting = Int(defaults.string(forKey: "autoAlert5")!)!
+        
+        let onesetting = Int(defaults.string(forKey: "autoAlert1")!)!
+        
+        let zerosetting = Int(defaults.string(forKey: "autoAlert0")!)!
+        
+        if tensetting == 0 {
+            if autoAlert10.state.rawValue == 1 {
+             autoAlert10.setNextState()
+            }
+        }
+        
+        if fivesetting == 0 {
+            if autoAlert5.state.rawValue == 1 {
+                autoAlert5.setNextState()
+            }
+        }
+        
+        if onesetting == 0 {
+            if autoAlert1.state.rawValue == 1 {
+                autoAlert1.setNextState()
+            }
+        }
+        
+        if zerosetting == 0 {
+            if autoAlert0.state.rawValue == 1 {
+                autoAlert0.setNextState()
+            }
+        }
         
         let menuBarFormat = defaults.string(forKey: "menuBarFormat")
         
@@ -94,6 +142,14 @@ class Prefs: NSViewController {
         }
     }
     
+    @IBAction func hotkeychange(_ sender: NSButton) {
+        defaults.set(sender.identifier!, forKey: "setHotKey")
+        print(sender.identifier!)
+        NotificationCenter.default.post(name: Notification.Name("settingChanged"), object: nil)
+        
+    }
+    
+    
     @IBAction func launchAtLoginChanged(_ sender: NSButton) {
         if WelcomePrefsLaunchAtLogin.state.rawValue == 1 {
             LaunchAtLogin.isEnabled = true
@@ -131,4 +187,43 @@ class Prefs: NSViewController {
     }
     
     
+    @IBAction func tenminbuttonclicked(_ sender: NSButton) {
+        if sender.state.rawValue == 0 {
+            print("Turning off:")
+            switch sender.title {
+            case "Has 10 minutes left":
+             print("Has 10 minutes left")
+            defaults.set(0, forKey: "autoAlert10")
+            case "Has 5 minutes left":
+              print("Has 5 minutes left")
+                defaults.set(0, forKey: "autoAlert5")
+            case "Has 1 minute left":
+                print("Has 1 minute left")
+                defaults.set(0, forKey: "autoAlert1")
+            case "Finishes":
+                print("Finishes")
+                defaults.set(0, forKey: "autoAlert0")
+            default:
+                print("Not found")
+            }
+        } else {
+            print("Turning on:")
+            switch sender.title {
+            case "Has 10 minutes left":
+                print("Has 10 minutes left")
+                defaults.set(1, forKey: "autoAlert10")
+            case "Has 5 minutes left":
+                print("Has 5 minutes left")
+                defaults.set(1, forKey: "autoAlert5")
+            case "Has 1 minute left":
+                print("Has 1 minute left")
+                defaults.set(1, forKey: "autoAlert1")
+            case "Finishes":
+                print("Finishes")
+                defaults.set(1, forKey: "autoAlert0")
+            default:
+                print("Not found")
+            }
+        }
+    }
 }

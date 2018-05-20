@@ -66,7 +66,6 @@
 		BF72ED1C20AA681A00632763 /* MCHS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCHS.swift; sourceTree = "<group>"; };
 		BF72ED1E20AA724700632763 /* AutomaticNotifcations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticNotifcations.swift; sourceTree = "<group>"; };
 		BF781BF320A4723800F60E6C /* OutputHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputHandler.swift; sourceTree = "<group>"; };
-		BF7AB70D20AFE7C0006BC1F6 /* How Long Left?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "How Long Left?.app"; path = "/Users/ryankontos/Developer/How Long Left-macOS/build/Debug/How Long Left?.app"; sourceTree = "<absolute>"; };
 		BF853E17209D8419003374CC /* How Long Left?-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "How Long Left?-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF853E24209D8584003374CC /* MenuBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuBar.xib; sourceTree = "<group>"; };
 		BF853E25209D8584003374CC /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		BFC2A55220A5DDA40015C97D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFEB559120AFE919008752FA /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LaunchAtLogin.framework; sourceTree = "<group>"; };
 		BFEB559220AFE919008752FA /* HotKey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HotKey.framework; sourceTree = "<group>"; };
+		BFEB559920AFF30B008752FA /* How Long Left?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "How Long Left?.app"; path = "/Users/ryankontos/Developer/How Long Left-macOS/build/Debug/How Long Left?.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,10 +135,10 @@
 		BF914ACF2099393D00927006 = {
 			isa = PBXGroup;
 			children = (
-				BFEB559020AFE919008752FA /* Frameworks */,
 				BF7AB70720AFE716006BC1F6 /* Classes */,
 				BF7AB70820AFE744006BC1F6 /* UI */,
 				BF7AB70B20AFE77E006BC1F6 /* Supporting Files */,
+				BFEB559020AFE919008752FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,7 +172,7 @@
 			);
 			name = "How Long Left?";
 			productName = "How Long Left?";
-			productReference = BF7AB70D20AFE7C0006BC1F6 /* How Long Left?.app */;
+			productReference = BFEB559920AFF30B008752FA /* How Long Left?.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
