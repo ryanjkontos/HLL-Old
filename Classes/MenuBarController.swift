@@ -7,6 +7,7 @@
 //
 //  Manages the App Launch, Menu Bar, Triggering of output events, Responding to settings changes, Timers, and Launching windows... basically just too much stuff.
 //
+
 import Cocoa
 import HotKey
 import Carbon

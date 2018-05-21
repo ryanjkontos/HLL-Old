@@ -19,8 +19,8 @@ class Calendar {
         static var titleOfNextEvent: String?
         static var minutesRemainingOfCurrentEvent: Int?
         static var endTimeOfCurrentEvent: NSDate?
+        static var locationOfNextEvent: String?
         static var appHasCalendarAccess = false
-    
     }
     
     
@@ -34,6 +34,7 @@ class Calendar {
     var eventsArray = [EKEvent]()
     var endTimesArray = [CFDate]()
     var events = [EKEvent]()
+    var locationsArray = [String?]()
     
     func getCalendars() -> [EKCalendar?] {
         eventStore = EKEventStore()
@@ -69,6 +70,7 @@ class Calendar {
         events.removeAll()
         timesArray.removeAll()
         eventStore = EKEventStore()
+        locationsArray.removeAll()
         
 
         let calendars = eventStore.calendars(for: .event)
@@ -112,6 +114,7 @@ class Calendar {
                 namesArray.append(item.title)
                 eventsArray.append(item)
                 endTimesArray.append(item.endDate! as CFDate)
+                locationsArray.append(item.location)
                 if Int(dif2) < 0 {
                 }
                 
@@ -160,6 +163,8 @@ class Calendar {
                 let tempNextName = namesArray[nextIndex]
                 calData.titleOfNextEvent = MCHSData.convertMagdaleneName(inputName: tempNextName)
                 
+                calData.locationOfNextEvent = locationsArray[nextIndex]
+                
                 if calData.titleOfCurrentEvent == calData.titleOfNextEvent {
                     calData.endTimeOfCurrentEvent = endTimesArray[nextIndex]
                     }
@@ -176,6 +181,11 @@ class Calendar {
 }
     
     // MARK: Return APIs which I kinda just tacked onto the old method of retreiving calendar data with the calData struct. Basically just functions that read calData and return the results.
+    
+    
+    func locationOfEvent() -> String? {
+     return calData.locationOfNextEvent
+    }
     
     func titleOfEvent(which: String) -> String? {
         switch which {

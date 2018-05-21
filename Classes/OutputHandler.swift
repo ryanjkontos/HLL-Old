@@ -39,7 +39,13 @@ class OutputHandler {
                 if nextName == nil {
                   secondLine = "No upcoming events."
                 } else {
-                    secondLine = "Next: \(nextName!)."
+                    let nextLocation = calendar.locationOfEvent()
+                    
+                    if nextLocation != nil {
+                      secondLine = "Next: \(nextName!). (\(nextLocation!))"
+                    } else {
+                      secondLine = "Next: \(nextName!)."
+                    }
                 }
             } else {
                firstLine = "No events are running right now."
