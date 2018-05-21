@@ -155,17 +155,23 @@ class Calendar {
             
             let tempName = namesArray[timesIndex!]
             calData.titleOfPreviousEvent = calData.titleOfCurrentEvent
-           calData.titleOfCurrentEvent = MCHSData.convertMagdaleneName(inputName: tempName)
+           calData.titleOfCurrentEvent = MCHSData.magdaleneNameOf(inputName: tempName)
             
             
             if namesArray.count-1 >= nextIndex {
               
                 let tempNextName = namesArray[nextIndex]
-                calData.titleOfNextEvent = MCHSData.convertMagdaleneName(inputName: tempNextName)
+                calData.titleOfNextEvent = MCHSData.magdaleneNameOf(inputName: tempNextName)
                 
                 calData.locationOfNextEvent = locationsArray[nextIndex]
                 
                 if calData.titleOfCurrentEvent == calData.titleOfNextEvent {
+                    if namesArray.indices.contains(nextIndex+1) == true {
+                        calData.titleOfNextEvent = namesArray[nextIndex+1]
+                    } else {
+                      calData.titleOfNextEvent = nil
+                        calData.locationOfNextEvent = nil
+                    }
                     calData.endTimeOfCurrentEvent = endTimesArray[nextIndex]
                     }
                     returnVal = true

@@ -12,7 +12,7 @@ import Foundation
 
 class MCHS {
     
-    func convertMagdaleneName(inputName: String) -> String {
+    func magdaleneNameOf(inputName: String) -> String {
         var newName = inputName
         
         if inputName.range(of:"Pastoral Care") != nil {

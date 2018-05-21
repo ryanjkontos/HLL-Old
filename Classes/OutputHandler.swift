@@ -42,9 +42,9 @@ class OutputHandler {
                     let nextLocation = calendar.locationOfEvent()
                     
                     if nextLocation != nil {
-                      secondLine = "Next: \(nextName!). (\(nextLocation!))"
+                      secondLine = "You have \(nextName!) next. (\(nextLocation!))"
                     } else {
-                      secondLine = "Next: \(nextName!)."
+                      secondLine = "You have \(nextName!) next."
                     }
                 }
             } else {
