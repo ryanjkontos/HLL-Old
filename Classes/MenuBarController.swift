@@ -198,34 +198,22 @@ class StatusMenuController: NSObject {
     
     @objc func routineMenuBarUpdate(isStart: Bool) {
         
-        if isStart == true {
-        
-        if OutputHandler.outputArchive.predictedMenuBarText != nil {
-            
-            let myString = OutputHandler.outputArchive.predictedMenuBarText!
-            let myAttribute = [ NSAttributedStringKey.font: NSFont(name: "Helvetica Neue", size: 13.0)! ]
-            let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
-            statusItem.attributedTitle = myAttrString
-            
-            }
-        }
-        
         let _ = calendar.updateCalendarData()
         
         let myString = outputhandler.outputMenuBar(isStartMin: isStart)
+        let myAttribute = [ NSAttributedStringKey.font: NSFont(name: "Helvetica Neue", size: 13.0)!]
         
-        if myString != "" {
-            statusItem.image = nil
-        } else {
+        let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
+        
+        if myString == "" {
             let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
+            statusItem.attributedTitle = myAttrString
             statusItem.image = icon
+        } else {
+            statusItem.image = nil
+          statusItem.attributedTitle = myAttrString
         }
         
-        
-        let myAttribute = [ NSAttributedStringKey.font: NSFont(name: "Helvetica Neue", size: 13.0)!]
-       
-        let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
-        statusItem.attributedTitle = myAttrString
         menuBarItemUpdate()
         
     }
