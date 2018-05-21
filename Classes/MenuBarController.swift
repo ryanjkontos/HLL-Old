@@ -14,6 +14,7 @@ import Carbon
 
 class StatusMenuController: NSObject {
     
+    @IBOutlet weak var showNotificationsButton: NSMenuItem!
     var fastTimer: Timer!
     var timer = Timer()
     let outputhandler = OutputHandler()
@@ -99,11 +100,6 @@ class StatusMenuController: NSObject {
             notify.secondLine = "Enable it in System Preferences."
             notify.send()
         }
-        
-        
-      /*  UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        UserDefaults.standard.synchronize() */
-    
         let latestversion = (defaults.string(forKey: "setupComplete"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
@@ -124,13 +120,14 @@ class StatusMenuController: NSObject {
        let hotKeySetValue = (defaults.string(forKey: "setHotKey")!)
         
         if hotKeySetValue == "0" {
+          
             
           hotKey = HotKey(keyCombo: KeyCombo(key: .w, modifiers: [.option]))
+            
         } else {
             
             hotKey = HotKey(keyCombo: KeyCombo(key: .t, modifiers: [.command]))
         }
-        
     }
     
     
@@ -217,10 +214,20 @@ class StatusMenuController: NSObject {
         
         let myString = outputhandler.outputMenuBar(isStartMin: isStart)
         
-        let myAttribute = [ NSAttributedStringKey.font: NSFont(name: "Helvetica Neue", size: 13.0)! ]
+        if myString != "" {
+            statusItem.image = nil
+        } else {
+            let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
+            statusItem.image = icon
+        }
+        
+        
+        let myAttribute = [ NSAttributedStringKey.font: NSFont(name: "Helvetica Neue", size: 13.0)!]
+       
         let myAttrString = NSAttributedString(string: myString, attributes: myAttribute)
         statusItem.attributedTitle = myAttrString
         menuBarItemUpdate()
+        
     }
     
     @IBAction func run(_ sender: NSMenuItem) {

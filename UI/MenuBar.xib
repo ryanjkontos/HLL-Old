@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="menuOutput1" destination="T6O-3E-MSc" id="9y5-jU-hIs"/>
                 <outlet property="menuOutput2" destination="RGx-T1-Asm" id="AeM-qS-jAA"/>
+                <outlet property="showNotificationsButton" destination="vdj-5x-ffj" id="Zfs-z0-Iwk"/>
                 <outlet property="statusMenu" destination="n3t-Qc-pUZ" id="HwH-LX-rvH"/>
             </connections>
         </customObject>
@@ -27,12 +28,12 @@
                 <menuItem title="MB Text Line 1" enabled="NO" id="T6O-3E-MSc">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="MB Text Line 2" hidden="YES" enabled="NO" id="RGx-T1-Asm">
+                <menuItem title="MB Text Line 2" enabled="NO" id="RGx-T1-Asm">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="gyl-T2-yjU"/>
-                <menuItem title="Show Notification" keyEquivalent="w" id="vdj-5x-ffj">
-                    <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                <menuItem title="Show Notification" id="vdj-5x-ffj">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="run:" target="HRA-Qw-Zvv" id="fTR-w9-NbC"/>
                     </connections>
@@ -44,7 +45,8 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="ROl-jv-bFc"/>
-                <menuItem title="Preferences" keyEquivalent="," id="uma-RD-hZF">
+                <menuItem title="Preferences" id="uma-RD-hZF">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="PrefClicked:" target="HRA-Qw-Zvv" id="Mja-09-8Ti"/>
                     </connections>
@@ -55,7 +57,7 @@
                         <action selector="quitClicked:" target="HRA-Qw-Zvv" id="ccb-d3-eSy"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="F1q-y9-unW"/>
+                <menuItem isSeparatorItem="YES" id="GHL-EI-EOz"/>
                 <menuItem title="How Long Left 1.0 (Dev 3)" enabled="NO" id="7Mn-ig-y0D">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
