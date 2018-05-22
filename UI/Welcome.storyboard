@@ -447,7 +447,7 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="y4h-PT-qn1">
-                                <rect key="frame" x="23" y="52" width="555" height="4"/>
+                                <rect key="frame" x="23" y="52" width="555" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DnL-pV-RrH">
@@ -519,7 +519,7 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-KR-Efq">
-                                <rect key="frame" x="44" y="150" width="517" height="105"/>
+                                <rect key="frame" x="44" y="150" width="517" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MdW-aB-G9G">
@@ -656,30 +656,22 @@
                                 <rect key="frame" x="23" y="48" width="555" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBm-WR-2G2">
-                                <rect key="frame" x="55" y="286" width="491" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="(In Beta 3)" id="vMa-be-h2H">
-                                    <font key="font" metaFont="systemMedium" size="20"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jpz-ic-fmm">
-                                <rect key="frame" x="195" y="310" width="211" height="46"/>
+                                <rect key="frame" x="161" y="325" width="278" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="What's New:" id="DVg-M8-j7z">
-                                    <font key="font" metaFont="system" size="38"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="What's New (Beta 3):" id="DVg-M8-j7z">
+                                    <font key="font" metaFont="system" size="30"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J1L-LJ-Sak">
-                                <rect key="frame" x="18" y="47" width="573" height="230"/>
+                                <rect key="frame" x="6" y="23" width="588" height="289"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="53p-Cw-TsR">
-                                    <font key="font" metaFont="system"/>
-                                    <string key="title">- Added automatic notifications, which can be optionally be configured to appear automatically at 1, 5, and 10 minutes remaining, as well as when the event is done.
+                                    <font key="font" metaFont="system" size="12"/>
+                                    <mutableString key="title">- Added automatic notifications, which can be optionally be configured to appear automatically at 1, 5, and 10 minutes remaining, as well as when the event is done.
+- The clock icon is now hidden when there is text showing in the menu bar.
 - How Long Left will now instantly reflect changes you make to your calendar.
 - The menu that appears when you click the menu bar icon now displays time remaining information.
 - More default Magdalene calendar event titles are now shortened.
@@ -688,7 +680,8 @@
 - Fixed an issue where changing the calendar setting would cause the menu bar format to be reset to default.
 - Fixed an issue where the set menu bar format would not be displayed in the preferences window.
 - Fixed an issue where the preferences window would open behind other windows.
-- Fixed an issue where the preferences window was resizable.</string>
+- Fixed an issue where the preferences window was resizable.
+- Fixed an issue where when the current event was being automatically detected as a double, the title of the next event would be displayed as the title of the current event.</mutableString>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

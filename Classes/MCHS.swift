@@ -52,7 +52,7 @@ class MCHS {
         }
         
         if inputName.range(of:"Design") != nil {
-            newName = "DNT"
+            newName = "D&T"
         }
 
         if inputName.range(of:"Maths") != nil {

@@ -10,7 +10,6 @@
 
 import Cocoa
 import HotKey
-import Carbon
 
 class StatusMenuController: NSObject {
     
@@ -20,7 +19,6 @@ class StatusMenuController: NSObject {
     let outputhandler = OutputHandler()
     
     @IBOutlet weak var menuOutput1: NSMenuItem!
-    
     @IBOutlet weak var menuOutput2: NSMenuItem!
     
     struct menuLines {
