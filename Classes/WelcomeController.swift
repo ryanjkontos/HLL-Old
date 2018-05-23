@@ -16,15 +16,14 @@ let userData = UserDefaults.standard
 
 class WelcomeWindow: NSWindowController {
     override func windowDidLoad() {
+        
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+        
         window?.styleMask.remove(.resizable)
         NSApp.activate(ignoringOtherApps: true)
-       
-
     }
-    
-    
-    
-    
 }
 
 
@@ -197,6 +196,9 @@ class Welcome_CalendarAccess: welcomeNav {
 
 class Welcome_Preferences: welcomeNav {
     
+    
+    
+    
     // 5
     
     @IBAction func back(_ sender: NSButton) {
@@ -212,6 +214,11 @@ class Welcome_Preferences: welcomeNav {
     @IBOutlet weak var WelcomePrefsMenuBar: NSPopUpButton!
     
     override func viewWillAppear() {
+        
+        defaults.set(1, forKey: "autoAlert10")
+        defaults.set(1, forKey: "autoAlert5")
+        defaults.set(1, forKey: "autoAlert1")
+        defaults.set(1, forKey: "autoAlert0")
         
         defaults.set(WelcomePrefsMenuBar.selectedItem?.title, forKey: "menuBarFormat")
         if LaunchAtLogin.isEnabled == true {

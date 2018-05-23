@@ -400,7 +400,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left-Beta4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/How Long Left?-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -429,7 +429,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left-Beta4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/How Long Left?-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

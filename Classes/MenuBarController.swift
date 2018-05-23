@@ -98,11 +98,12 @@ class StatusMenuController: NSObject {
             notify.secondLine = "Enable it in System Preferences."
             notify.send()
         }
-        let latestversion = (defaults.string(forKey: "setupComplete"))
+        var latestversion = (defaults.string(forKey: "setupComplete"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
-        
-        if latestversion != "1.0b3" {
+       
+        latestversion = ""
+        if latestversion != "1.0b4" {
         showWelcomeView()
             
         } else {
@@ -132,7 +133,7 @@ class StatusMenuController: NSObject {
     
     @objc func launchApp() {
         setHotKey()
-        defaults.set("1.0b3", forKey: "latestVersion")
+        defaults.set("1.0b4", forKey: "latestVersion")
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
         icon?.isTemplate = true
         statusItem.image = icon
