@@ -129,10 +129,9 @@ class StatusMenuController: NSObject {
             notify.secondLine = "Enable it in System Preferences."
             notify.send()
         }
-        var latestversion = (defaults.string(forKey: "setupComplete"))
+        let latestversion = (defaults.string(forKey: "setupComplete"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
-    latestversion = ""
         
         if latestversion != "1.0" {
             
