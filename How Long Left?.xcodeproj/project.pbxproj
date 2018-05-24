@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF47A1A620A1904E00D98F4A /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47A1A520A1904E00D98F4A /* WelcomeController.swift */; };
+		BF60BACD20B6D2B2004DECF5 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8223D820B6CB7B00A711B7 /* ServiceManagement.framework */; };
 		BF72ED1D20AA681A00632763 /* MCHS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF72ED1C20AA681A00632763 /* MCHS.swift */; };
 		BF72ED1F20AA724700632763 /* AutomaticNotifcations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF72ED1E20AA724700632763 /* AutomaticNotifcations.swift */; };
 		BF781BF420A4723900F60E6C /* OutputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF781BF320A4723800F60E6C /* OutputHandler.swift */; };
@@ -20,19 +21,23 @@
 		BF853E39209D88C2003374CC /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E36209D88C1003374CC /* PreferencesController.swift */; };
 		BFA81E6120A5B34100C4DB6C /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA81E6020A5B34100C4DB6C /* Welcome.storyboard */; };
 		BFC2A55320A5DDA50015C97D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC2A55220A5DDA40015C97D /* Assets.xcassets */; };
-		BFEB559320AFE919008752FA /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEB559120AFE919008752FA /* LaunchAtLogin.framework */; };
 		BFEB559420AFE919008752FA /* HotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEB559220AFE919008752FA /* HotKey.framework */; };
-		BFEB559520AFEA24008752FA /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFEB559120AFE919008752FA /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFEB559620AFEA24008752FA /* HotKey.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFEB559220AFE919008752FA /* HotKey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFEC2F9020B6E29000304EA0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEC2F8F20B6E29000304EA0 /* Cocoa.framework */; };
+		BFEC2F9820B6E30200304EA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC2F9720B6E30200304EA0 /* AppDelegate.swift */; };
+		BFEC2F9A20B6E30500304EA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEC2F9920B6E30500304EA0 /* Assets.xcassets */; };
+		BFEC2F9D20B6E30500304EA0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEC2F9B20B6E30500304EA0 /* MainMenu.xib */; };
+		BFEC2FA320B6E33300304EA0 /* HowLongLeftLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = BFEC2F9520B6E30200304EA0 /* HowLongLeftLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BF451A6C20AEF8A800757384 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
 			files = (
+				BFEC2FA320B6E33300304EA0 /* HowLongLeftLauncher.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,7 +47,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BFEB559520AFEA24008752FA /* LaunchAtLogin.framework in Embed Frameworks */,
 				BFEB559620AFEA24008752FA /* HotKey.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -66,6 +70,7 @@
 		BF72ED1C20AA681A00632763 /* MCHS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCHS.swift; sourceTree = "<group>"; };
 		BF72ED1E20AA724700632763 /* AutomaticNotifcations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticNotifcations.swift; sourceTree = "<group>"; };
 		BF781BF320A4723800F60E6C /* OutputHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputHandler.swift; sourceTree = "<group>"; };
+		BF8223D820B6CB7B00A711B7 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		BF853E17209D8419003374CC /* How Long Left?-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "How Long Left?-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF853E24209D8584003374CC /* MenuBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuBar.xib; sourceTree = "<group>"; };
 		BF853E25209D8584003374CC /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -78,8 +83,14 @@
 		BFA81E6020A5B34100C4DB6C /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BFC2A55220A5DDA40015C97D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFEB00EB20B1994700975F0A /* How Long Left?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Long Left?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFEB559120AFE919008752FA /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LaunchAtLogin.framework; sourceTree = "<group>"; };
 		BFEB559220AFE919008752FA /* HotKey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HotKey.framework; sourceTree = "<group>"; };
+		BFEC2F8F20B6E29000304EA0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BFEC2F9520B6E30200304EA0 /* HowLongLeftLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowLongLeftLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFEC2F9720B6E30200304EA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BFEC2F9920B6E30500304EA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFEC2F9C20B6E30500304EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BFEC2F9E20B6E30500304EA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFEC2F9F20B6E30500304EA0 /* HowLongLeftLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HowLongLeftLauncher.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +98,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFEC2F9020B6E29000304EA0 /* Cocoa.framework in Frameworks */,
+				BF60BACD20B6D2B2004DECF5 /* ServiceManagement.framework in Frameworks */,
 				BFEB559420AFE919008752FA /* HotKey.framework in Frameworks */,
-				BFEB559320AFE919008752FA /* LaunchAtLogin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEC2F9220B6E30200304EA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,19 +157,34 @@
 				BF7AB70720AFE716006BC1F6 /* Classes */,
 				BF7AB70820AFE744006BC1F6 /* UI */,
 				BF7AB70B20AFE77E006BC1F6 /* Supporting Files */,
+				BFEC2F9620B6E30200304EA0 /* HowLongLeftLauncher */,
 				BFEB559020AFE919008752FA /* Frameworks */,
 				BFEB00EB20B1994700975F0A /* How Long Left?.app */,
+				BFEC2F9520B6E30200304EA0 /* HowLongLeftLauncher.app */,
 			);
 			sourceTree = "<group>";
 		};
 		BFEB559020AFE919008752FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BFEB559120AFE919008752FA /* LaunchAtLogin.framework */,
+				BFEC2F8F20B6E29000304EA0 /* Cocoa.framework */,
+				BF8223D820B6CB7B00A711B7 /* ServiceManagement.framework */,
 				BFEB559220AFE919008752FA /* HotKey.framework */,
 			);
 			path = Frameworks;
 			sourceTree = SOURCE_ROOT;
+		};
+		BFEC2F9620B6E30200304EA0 /* HowLongLeftLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				BFEC2F9720B6E30200304EA0 /* AppDelegate.swift */,
+				BFEC2F9920B6E30500304EA0 /* Assets.xcassets */,
+				BFEC2F9B20B6E30500304EA0 /* MainMenu.xib */,
+				BFEC2F9E20B6E30500304EA0 /* Info.plist */,
+				BFEC2F9F20B6E30500304EA0 /* HowLongLeftLauncher.entitlements */,
+			);
+			path = HowLongLeftLauncher;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -164,7 +198,6 @@
 				BF914AD62099393D00927006 /* Resources */,
 				BFA2AC7C209B21C400FB4490 /* Embed App Extensions */,
 				BF853E2D209D85AC003374CC /* Embed Frameworks */,
-				BF9A015320A8F18F0026AA98 /* ShellScript */,
 				BF451A6C20AEF8A800757384 /* CopyFiles */,
 			);
 			buildRules = (
@@ -174,6 +207,23 @@
 			name = "How Long Left?";
 			productName = "How Long Left?";
 			productReference = BFEB00EB20B1994700975F0A /* How Long Left?.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFEC2F9420B6E30200304EA0 /* HowLongLeftLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFEC2FA020B6E30500304EA0 /* Build configuration list for PBXNativeTarget "HowLongLeftLauncher" */;
+			buildPhases = (
+				BFEC2F9120B6E30200304EA0 /* Sources */,
+				BFEC2F9220B6E30200304EA0 /* Frameworks */,
+				BFEC2F9320B6E30200304EA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HowLongLeftLauncher;
+			productName = HowLongLeftLauncher;
+			productReference = BFEC2F9520B6E30200304EA0 /* HowLongLeftLauncher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,6 +245,9 @@
 							};
 						};
 					};
+					BFEC2F9420B6E30200304EA0 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
 				};
 			};
 			buildConfigurationList = BF914AD32099393D00927006 /* Build configuration list for PBXProject "How Long Left?" */;
@@ -211,6 +264,7 @@
 			projectRoot = "";
 			targets = (
 				BF914AD72099393D00927006 /* How Long Left? */,
+				BFEC2F9420B6E30200304EA0 /* HowLongLeftLauncher */,
 			);
 		};
 /* End PBXProject section */
@@ -227,24 +281,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		BF9A015320A8F18F0026AA98 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+		BFEC2F9320B6E30200304EA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
+				BFEC2F9A20B6E30500304EA0 /* Assets.xcassets in Resources */,
+				BFEC2F9D20B6E30500304EA0 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "Frameworks/LaunchAtLogin.framework/Versions/A/Resources/copy-helper.sh";
-			showEnvVarsInLog = 0;
 		};
-/* End PBXShellScriptBuildPhase section */
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF914AD42099393D00927006 /* Sources */ = {
@@ -263,7 +309,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFEC2F9120B6E30200304EA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFEC2F9820B6E30200304EA0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BFEC2F9B20B6E30500304EA0 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFEC2F9C20B6E30500304EA0 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BF914AE42099393F00927006 /* Debug */ = {
@@ -400,8 +465,9 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left-Beta4";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/How Long Left?-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -429,9 +495,52 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left-Beta4";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryankontos.How-Long-Left-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/How Long Left?-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		BFEC2FA120B6E30500304EA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HowLongLeftLauncher/HowLongLeftLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5AMFX8X5ZN;
+				INFOPLIST_FILE = HowLongLeftLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ryankontos.HowLongLeftLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		BFEC2FA220B6E30500304EA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HowLongLeftLauncher/HowLongLeftLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5AMFX8X5ZN;
+				INFOPLIST_FILE = HowLongLeftLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ryankontos.HowLongLeftLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -453,6 +562,15 @@
 			buildConfigurations = (
 				BF914AE72099393F00927006 /* Debug */,
 				BF914AE82099393F00927006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFEC2FA020B6E30500304EA0 /* Build configuration list for PBXNativeTarget "HowLongLeftLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEC2FA120B6E30500304EA0 /* Debug */,
+				BFEC2FA220B6E30500304EA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

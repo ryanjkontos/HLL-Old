@@ -18,6 +18,10 @@
             <connections>
                 <outlet property="menuOutput1" destination="T6O-3E-MSc" id="9y5-jU-hIs"/>
                 <outlet property="menuOutput2" destination="RGx-T1-Asm" id="AeM-qS-jAA"/>
+                <outlet property="preferencesButton" destination="uma-RD-hZF" id="rtq-Aa-M43"/>
+                <outlet property="quitButton" destination="I95-fM-FB4" id="mIu-3l-1ZU"/>
+                <outlet property="refreshMenuBarButton" destination="7aB-LV-p9v" id="Klp-Az-ch6"/>
+                <outlet property="showNotificationButton" destination="vdj-5x-ffj" id="Vs5-KS-bOs"/>
                 <outlet property="showNotificationsButton" destination="vdj-5x-ffj" id="Zfs-z0-Iwk"/>
                 <outlet property="statusMenu" destination="n3t-Qc-pUZ" id="HwH-LX-rvH"/>
             </connections>
@@ -58,11 +62,11 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="GHL-EI-EOz"/>
-                <menuItem title="How Long Left 1.0 (Beta 4)" enabled="NO" id="7Mn-ig-y0D">
+                <menuItem title="How Long Left (1.0)" enabled="NO" id="7Mn-ig-y0D">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-33" y="204"/>
+            <point key="canvasLocation" x="71" y="193"/>
         </menu>
     </objects>
 </document>

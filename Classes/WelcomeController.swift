@@ -9,8 +9,7 @@
 //
 
 import EventKit
-import LaunchAtLogin
-
+import ServiceManagement
 
 let userData = UserDefaults.standard
 
@@ -24,6 +23,11 @@ class WelcomeWindow: NSWindowController {
         window?.styleMask.remove(.resizable)
         NSApp.activate(ignoringOtherApps: true)
     }
+    
+    override func close() {
+        NSApplication.shared.terminate(self)
+    }
+    
 }
 
 
@@ -221,7 +225,9 @@ class Welcome_Preferences: welcomeNav {
         defaults.set(1, forKey: "autoAlert0")
         
         defaults.set(WelcomePrefsMenuBar.selectedItem?.title, forKey: "menuBarFormat")
-        if LaunchAtLogin.isEnabled == true {
+        
+        let LAL = defaults.string(forKey: "launchAtLoginEnabled")!
+        if LAL == "true" {
             if WelcomePrefsLaunchAtLogin.state.rawValue == 0 {
                 WelcomePrefsLaunchAtLogin.setNextState()
             }
@@ -234,9 +240,11 @@ class Welcome_Preferences: welcomeNav {
     
     @IBAction func launchAtLoginChanged(_ sender: NSButton) {
         if WelcomePrefsLaunchAtLogin.state.rawValue == 1 {
-            LaunchAtLogin.isEnabled = true
+           SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, true)
+            defaults.set("true", forKey: "launchAtLoginEnabled")
         } else {
-            LaunchAtLogin.isEnabled = false
+            SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, false)
+            defaults.set("false", forKey: "launchAtLoginEnabled")
         }
         
     }
@@ -263,7 +271,7 @@ class Welcome_YoureAllSet: welcomeNav {
     }
     
     @IBAction func Done(_ sender: NSButton) {
-        defaults.set("1.0b3", forKey: "setupComplete")
+        defaults.set("1.0", forKey: "setupComplete")
         NotificationCenter.default.post(name: Notification.Name("setupComplete"), object: nil)
       self.view.window?.close()
     }

@@ -10,6 +10,7 @@
 
 import Cocoa
 import HotKey
+import ServiceManagement
 
 class StatusMenuController: NSObject {
     
@@ -20,6 +21,14 @@ class StatusMenuController: NSObject {
     
     @IBOutlet weak var menuOutput1: NSMenuItem!
     @IBOutlet weak var menuOutput2: NSMenuItem!
+    
+    @IBOutlet weak var showNotificationButton: NSMenuItem!
+    @IBOutlet weak var refreshMenuBarButton: NSMenuItem!
+    
+    @IBOutlet weak var preferencesButton: NSMenuItem!
+    @IBOutlet weak var quitButton: NSMenuItem!
+    
+    
     
     struct menuLines {
         static var menuLine1 = ""
@@ -92,18 +101,39 @@ class StatusMenuController: NSObject {
     
     override func awakeFromNib() {
         
+       NotificationCenter.default.post(name: Notification.Name("killLauncher"), object: "ryankontos.How-Long-Left-Mac")
+        
+        
+        let ret = SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, true)
+        
+        print(ret)
+        
+        
+        let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
+        icon?.isTemplate = true
+        statusItem.image = icon
+        statusItem.menu = statusMenu
+        
         let calAccessLaunch = calendardata.getCalendarAccess()
         if calAccessLaunch == false {
             notify.firstLine = "How Long Left does not have calendar access."
             notify.secondLine = "Enable it in System Preferences."
             notify.send()
         }
-        var latestversion = (defaults.string(forKey: "setupComplete"))
+        let latestversion = (defaults.string(forKey: "setupComplete"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
-       
-        latestversion = ""
-        if latestversion != "1.0b4" {
+    
+        
+        if latestversion != "1.0" {
+        
+            menuOutput1.title = "Complete setup to use How Long Left."
+            menuOutput2.isHidden = true
+            showNotificationsButton.isHidden = true
+            refreshMenuBarButton.isHidden = true
+            preferencesButton.isHidden = true
+            
+            
         showWelcomeView()
             
         } else {
@@ -132,8 +162,11 @@ class StatusMenuController: NSObject {
     
     
     @objc func launchApp() {
+        showNotificationsButton.isHidden = false
+        refreshMenuBarButton.isHidden = false
+        preferencesButton.isHidden = false
         setHotKey()
-        defaults.set("1.0b4", forKey: "latestVersion")
+        defaults.set("1.0", forKey: "setupComplete")
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
         icon?.isTemplate = true
         statusItem.image = icon

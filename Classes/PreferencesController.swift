@@ -12,8 +12,7 @@ import Foundation
 import AppKit
 import EventKit
 import Cocoa
-import LaunchAtLogin
-
+import ServiceManagement
 
 let defaults = UserDefaults.standard
 
@@ -93,7 +92,9 @@ class Prefs: NSViewController {
         }
         NSApp.activate(ignoringOtherApps: true)
         
-        if LaunchAtLogin.isEnabled == true {
+      let LAL = defaults.string(forKey: "launchAtLoginEnabled")!
+        
+        if LAL == "true" {
             if WelcomePrefsLaunchAtLogin.state.rawValue == 0 {
                 WelcomePrefsLaunchAtLogin.setNextState()
             }
@@ -152,9 +153,11 @@ class Prefs: NSViewController {
     
     @IBAction func launchAtLoginChanged(_ sender: NSButton) {
         if WelcomePrefsLaunchAtLogin.state.rawValue == 1 {
-            LaunchAtLogin.isEnabled = true
+            SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, true)
+            defaults.set("true", forKey: "launchAtLoginEnabled")
         } else {
-            LaunchAtLogin.isEnabled = false
+            SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, false)
+            defaults.set("false", forKey: "launchAtLoginEnabled")
         }
         
     }
