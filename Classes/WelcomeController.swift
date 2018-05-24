@@ -226,7 +226,12 @@ class Welcome_Preferences: welcomeNav {
         
         defaults.set(WelcomePrefsMenuBar.selectedItem?.title, forKey: "menuBarFormat")
         
-        let LAL = defaults.string(forKey: "launchAtLoginEnabled")!
+        let LAL = defaults.string(forKey: "launchAtLoginEnabled")
+        
+        if LAL == nil{
+          defaults.set("false", forKey: "launchAtLoginEnabled")
+        }
+        
         if LAL == "true" {
             if WelcomePrefsLaunchAtLogin.state.rawValue == 0 {
                 WelcomePrefsLaunchAtLogin.setNextState()

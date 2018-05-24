@@ -103,10 +103,19 @@ class StatusMenuController: NSObject {
         
        NotificationCenter.default.post(name: Notification.Name("killLauncher"), object: "ryankontos.How-Long-Left-Mac")
         
+        var LAL = defaults.string(forKey: "launchAtLoginEnabled")
         
-        let ret = SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, true)
+        if LAL == nil {
+          defaults.set("false", forKey: "launchAtLoginEnabled")
+            LAL = "false"
+        }
         
-        print(ret)
+        if LAL != "true" {
+           defaults.set("false", forKey: "launchAtLoginEnabled")
+           SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, false)
+        }
+        
+        
         
         
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
@@ -120,13 +129,13 @@ class StatusMenuController: NSObject {
             notify.secondLine = "Enable it in System Preferences."
             notify.send()
         }
-        let latestversion = (defaults.string(forKey: "setupComplete"))
+        var latestversion = (defaults.string(forKey: "setupComplete"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
-    
+    latestversion = ""
         
         if latestversion != "1.0" {
-        
+            
             menuOutput1.title = "Complete setup to use How Long Left."
             menuOutput2.isHidden = true
             showNotificationsButton.isHidden = true
