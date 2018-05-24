@@ -16,12 +16,32 @@ let userData = UserDefaults.standard
 class WelcomeWindow: NSWindowController {
     override func windowDidLoad() {
         
+        
+        let mainAppIdentifier = "ryankontos.HowLongLeftLauncher"
+        let runningApps = NSWorkspace.shared.runningApplications
+        let isRunning = !runningApps.filter { $0.bundleIdentifier == mainAppIdentifier }.isEmpty
+        
+        if !isRunning {
+            
+            let path = Bundle.main.bundlePath as NSString
+            var components = path.pathComponents
+            components.removeLast()
+            components.removeLast()
+            components.removeLast()
+            components.append("MacOS")
+            components.append("HowLongLeftLauncher") //main app name
+            
+            let newPath = NSString.path(withComponents: components)
+            
+            NSWorkspace.shared.launchApplication(newPath)
+        
         let domain = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: domain)
         UserDefaults.standard.synchronize()
         
         window?.styleMask.remove(.resizable)
         NSApp.activate(ignoringOtherApps: true)
+    }
     }
     
     override func close() {

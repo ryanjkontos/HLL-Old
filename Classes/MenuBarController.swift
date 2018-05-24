@@ -132,7 +132,6 @@ class StatusMenuController: NSObject {
         let latestversion = (defaults.string(forKey: "setupComplete"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
-        
         if latestversion != "1.0" {
             
             menuOutput1.title = "Complete setup to use How Long Left."
