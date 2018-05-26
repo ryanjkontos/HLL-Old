@@ -9,45 +9,32 @@
 //
 
 import EventKit
-import ServiceManagement
 
 let userData = UserDefaults.standard
 
 class WelcomeWindow: NSWindowController {
+    
+    func openWindow() {
+        var welcomeWindowController : NSWindowController?
+        
+        let welcomeStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Welcome"), bundle: nil)
+        welcomeWindowController = welcomeStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Welcome")) as? NSWindowController
+        welcomeWindowController?.showWindow(self)
+        welcomeWindowController?.showWindow(nil)
+    }
+    
+    
     override func windowDidLoad() {
         
+        window?.styleMask.remove(.resizable)
+        NSApplication.shared.activate(ignoringOtherApps: true)
         
-        let mainAppIdentifier = "ryankontos.HowLongLeftLauncher"
-        let runningApps = NSWorkspace.shared.runningApplications
-        let isRunning = !runningApps.filter { $0.bundleIdentifier == mainAppIdentifier }.isEmpty
-        
-        if !isRunning {
-            
-            let path = Bundle.main.bundlePath as NSString
-            var components = path.pathComponents
-            components.removeLast()
-            components.removeLast()
-            components.removeLast()
-            components.append("MacOS")
-            components.append("HowLongLeftLauncher") //main app name
-            
-            let newPath = NSString.path(withComponents: components)
-            
-            NSWorkspace.shared.launchApplication(newPath)
         
         let domain = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: domain)
         UserDefaults.standard.synchronize()
-        
-        window?.styleMask.remove(.resizable)
-        NSApp.activate(ignoringOtherApps: true)
-    }
-    }
     
-    override func close() {
-        NSApplication.shared.terminate(self)
     }
-    
 }
 
 
@@ -61,10 +48,6 @@ class tabView: NSTabViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.nav), name: Notification.Name("welcomeNavigate"), object: nil)
     }
-    
-    deinit {
-    }
-
         
     @objc func nav(data: Notification) {
         
@@ -220,7 +203,45 @@ class Welcome_CalendarAccess: welcomeNav {
 
 class Welcome_Preferences: welcomeNav {
     
-    
+    @IBAction func tenminbuttonclicked(_ sender: NSButton) {
+        if sender.state.rawValue == 0 {
+            print("Turning off:")
+            switch sender.title {
+            case "Has 10 minutes left":
+                print("Has 10 minutes left")
+                defaults.set(0, forKey: "autoAlert10")
+            case "Has 5 minutes left":
+                print("Has 5 minutes left")
+                defaults.set(0, forKey: "autoAlert5")
+            case "Has 1 minute left":
+                print("Has 1 minute left")
+                defaults.set(0, forKey: "autoAlert1")
+            case "Finishes":
+                print("Finishes")
+                defaults.set(0, forKey: "autoAlert0")
+            default:
+                print("Not found")
+            }
+        } else {
+            print("Turning on:")
+            switch sender.title {
+            case "Has 10 minutes left":
+                print("Has 10 minutes left")
+                defaults.set(1, forKey: "autoAlert10")
+            case "Has 5 minutes left":
+                print("Has 5 minutes left")
+                defaults.set(1, forKey: "autoAlert5")
+            case "Has 1 minute left":
+                print("Has 1 minute left")
+                defaults.set(1, forKey: "autoAlert1")
+            case "Finishes":
+                print("Finishes")
+                defaults.set(1, forKey: "autoAlert0")
+            default:
+                print("Not found")
+            }
+        }
+    }
     
     
     // 5
@@ -233,7 +254,6 @@ class Welcome_Preferences: welcomeNav {
         navTo(page: 6)
     }
     
-    @IBOutlet weak var WelcomePrefsLaunchAtLogin: NSButton!
     @IBOutlet weak var WelcomePrefsShowNext: NSButton!
     @IBOutlet weak var WelcomePrefsMenuBar: NSPopUpButton!
     
@@ -245,32 +265,6 @@ class Welcome_Preferences: welcomeNav {
         defaults.set(1, forKey: "autoAlert0")
         
         defaults.set(WelcomePrefsMenuBar.selectedItem?.title, forKey: "menuBarFormat")
-        
-        let LAL = defaults.string(forKey: "launchAtLoginEnabled")
-        
-        if LAL == nil{
-          defaults.set("false", forKey: "launchAtLoginEnabled")
-        }
-        
-        if LAL == "true" {
-            if WelcomePrefsLaunchAtLogin.state.rawValue == 0 {
-                WelcomePrefsLaunchAtLogin.setNextState()
-            }
-        } else {
-            if WelcomePrefsLaunchAtLogin.state.rawValue == 1 {
-               WelcomePrefsLaunchAtLogin.setNextState()
-            }
-        }
-    }
-    
-    @IBAction func launchAtLoginChanged(_ sender: NSButton) {
-        if WelcomePrefsLaunchAtLogin.state.rawValue == 1 {
-           SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, true)
-            defaults.set("true", forKey: "launchAtLoginEnabled")
-        } else {
-            SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, false)
-            defaults.set("false", forKey: "launchAtLoginEnabled")
-        }
         
     }
     

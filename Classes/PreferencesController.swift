@@ -12,7 +12,6 @@ import Foundation
 import AppKit
 import EventKit
 import Cocoa
-import ServiceManagement
 
 let defaults = UserDefaults.standard
 
@@ -28,7 +27,6 @@ class Preferences: NSWindowController {
 
 class Prefs: NSViewController {
     
-    @IBOutlet weak var WelcomePrefsLaunchAtLogin: NSButton!
     @IBOutlet weak var calendarsUseAll: NSButton!
     @IBOutlet weak var calendarsSelectPopUp: NSPopUpButton!
     @IBOutlet weak var WelcomePrefsMenuBar: NSPopUpButton!
@@ -92,19 +90,6 @@ class Prefs: NSViewController {
         }
         NSApp.activate(ignoringOtherApps: true)
         
-      let LAL = defaults.string(forKey: "launchAtLoginEnabled")!
-        
-        if LAL == "true" {
-            if WelcomePrefsLaunchAtLogin.state.rawValue == 0 {
-                WelcomePrefsLaunchAtLogin.setNextState()
-            }
-        } else {
-            if WelcomePrefsLaunchAtLogin.state.rawValue == 1 {
-                WelcomePrefsLaunchAtLogin.setNextState()
-            }
-        }
-        
-        
         
         
         let setCal = defaults.string(forKey: "Calendar")
@@ -151,16 +136,6 @@ class Prefs: NSViewController {
     }
     
     
-    @IBAction func launchAtLoginChanged(_ sender: NSButton) {
-        if WelcomePrefsLaunchAtLogin.state.rawValue == 1 {
-            SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, true)
-            defaults.set("true", forKey: "launchAtLoginEnabled")
-        } else {
-            SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, false)
-            defaults.set("false", forKey: "launchAtLoginEnabled")
-        }
-        
-    }
     
     @IBAction func calendarsUseAllChanged(_ sender: NSButton) {
         if calendarsUseAll.state.rawValue == 1 {

@@ -21,6 +21,7 @@
                 <outlet property="preferencesButton" destination="uma-RD-hZF" id="rtq-Aa-M43"/>
                 <outlet property="quitButton" destination="I95-fM-FB4" id="mIu-3l-1ZU"/>
                 <outlet property="refreshMenuBarButton" destination="7aB-LV-p9v" id="Klp-Az-ch6"/>
+                <outlet property="setupButton" destination="rvk-KS-Ql0" id="N3A-G7-BHJ"/>
                 <outlet property="showNotificationButton" destination="vdj-5x-ffj" id="Vs5-KS-bOs"/>
                 <outlet property="showNotificationsButton" destination="vdj-5x-ffj" id="Zfs-z0-Iwk"/>
                 <outlet property="statusMenu" destination="n3t-Qc-pUZ" id="HwH-LX-rvH"/>
@@ -34,6 +35,12 @@
                 </menuItem>
                 <menuItem title="MB Text Line 2" enabled="NO" id="RGx-T1-Asm">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Reopen Setup Window" id="rvk-KS-Ql0">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="setupClicked:" target="HRA-Qw-Zvv" id="U1G-RY-fuf"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="gyl-T2-yjU"/>
                 <menuItem title="Show Notification" id="vdj-5x-ffj">

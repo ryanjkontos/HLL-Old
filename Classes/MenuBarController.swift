@@ -10,7 +10,6 @@
 
 import Cocoa
 import HotKey
-import ServiceManagement
 
 class StatusMenuController: NSObject {
     
@@ -76,12 +75,8 @@ class StatusMenuController: NSObject {
     }
     
     func showWelcomeView() {
-        var welcomeWindowController : NSWindowController!
-        
-        let welcomeStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Welcome"), bundle: nil)
-        welcomeWindowController = welcomeStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Welcome")) as! NSWindowController
-        // make initial settings before showing the window
-        welcomeWindowController.showWindow(self)
+        let ww = WelcomeWindow()
+        ww.openWindow()
     }
     
     
@@ -100,22 +95,6 @@ class StatusMenuController: NSObject {
     
     
     override func awakeFromNib() {
-        
-       NotificationCenter.default.post(name: Notification.Name("killLauncher"), object: "ryankontos.How-Long-Left-Mac")
-        
-        var LAL = defaults.string(forKey: "launchAtLoginEnabled")
-        
-        if LAL == nil {
-          defaults.set("false", forKey: "launchAtLoginEnabled")
-            LAL = "false"
-        }
-        
-        if LAL != "true" {
-           defaults.set("false", forKey: "launchAtLoginEnabled")
-           SMLoginItemSetEnabled("ryankontos.HowLongLeftLauncher" as CFString, false)
-        }
-        
-        
         
         
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
@@ -136,6 +115,7 @@ class StatusMenuController: NSObject {
             
             menuOutput1.title = "Complete setup to use How Long Left."
             menuOutput2.isHidden = true
+            setupButton.isHidden = false
             showNotificationsButton.isHidden = true
             refreshMenuBarButton.isHidden = true
             preferencesButton.isHidden = true
@@ -150,6 +130,10 @@ class StatusMenuController: NSObject {
         }
     }
     
+    @IBOutlet weak var setupButton: NSMenuItem!
+    @IBAction func setupClicked(_ sender: Any) {
+      showWelcomeView()
+    }
     
     func setHotKey() {
         
@@ -169,6 +153,9 @@ class StatusMenuController: NSObject {
     
     
     @objc func launchApp() {
+        menuOutput2.isEnabled = false
+        menuOutput2.isHidden = true
+        setupButton.isHidden = true
         showNotificationsButton.isHidden = false
         refreshMenuBarButton.isHidden = false
         preferencesButton.isHidden = false
