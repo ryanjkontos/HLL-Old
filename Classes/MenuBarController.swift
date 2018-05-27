@@ -166,7 +166,7 @@ class StatusMenuController: NSObject {
         statusItem.image = icon
         statusItem.menu = statusMenu
         routineMenuBarUpdate(isStart: false)
-        fastTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(menuCheck), userInfo: nil, repeats: true)
+        fastTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(menuCheck), userInfo: nil, repeats: true)
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateSettings), name: Notification.Name("settingChanged"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.autoNotify), name: Notification.Name("autoNotify"), object: nil)
         
@@ -204,7 +204,7 @@ class StatusMenuController: NSObject {
         } else if seconds != 0 {
             let inSync = calendardata.isMenuBarInSync()
             if inSync != true {
-              routineMenuBarUpdate(isStart: false)
+            routineMenuBarUpdate(isStart: false)
                 
             }
         }

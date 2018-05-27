@@ -50,7 +50,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BF1DA15D20B7E21B0002CAD9 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LaunchAtLogin.framework; sourceTree = "<group>"; };
 		BF47A1A520A1904E00D98F4A /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		BF52AD38209D7FA8007422CA /* How Long Left?.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "How Long Left?.entitlements"; sourceTree = "<group>"; };
 		BF72ED1C20AA681A00632763 /* MCHS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCHS.swift; sourceTree = "<group>"; };
@@ -137,7 +136,6 @@
 		BFEB559020AFE919008752FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF1DA15D20B7E21B0002CAD9 /* LaunchAtLogin.framework */,
 				BFEC2F8F20B6E29000304EA0 /* Cocoa.framework */,
 				BF8223D820B6CB7B00A711B7 /* ServiceManagement.framework */,
 				BFEB559220AFE919008752FA /* HotKey.framework */,

@@ -136,7 +136,11 @@ class OutputHandler {
             
         }
         
-        if outputArchive.currentMenuText == "1", isStartMin == true {
+        print("Stored: \(outputArchive.currentMenuText)")
+        print("Start?: \(isStartMin)")
+        
+        if outputArchive.currentMenuText == "1", isStartMin == true, finalNum != "1" {
+            
             finalMenuText = "Done"
             autoNotify.sendDoneNotification()
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
