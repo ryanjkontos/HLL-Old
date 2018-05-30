@@ -22,6 +22,7 @@ let autoNotify = automaticNotifcation()
 var firstLine = ""
 var secondLine = ""
 var predictedNextMenuBarTextFinalString: String?
+var wasDone = false
 
 class OutputHandler {
 
@@ -143,13 +144,40 @@ class OutputHandler {
             
             finalMenuText = "Done"
             autoNotify.sendDoneNotification()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
              NotificationCenter.default.post(name: Notification.Name("settingChanged"), object: nil)
                 }
             }
+        
+        if wasDone == true {
+            
+            let nowName = calendar.titleOfEvent(which: "Current")
+            
+            if nowName == nil {
+                finalMenuText = "Nothing on now"
+            } else {
+                finalMenuText = "\(nowName!) on now"
+            }
+            
+            
+            
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                NotificationCenter.default.post(name: Notification.Name("settingChanged"), object: nil)
+            }
+        }
+        
+        
     outputArchive.predictedMenuBarText = predictedNextMenuBarTextFinalString
     outputArchive.currentMenuText = finalNum
     outputArchive.eventName = currentE
+        
+        if finalMenuText == "Done" {
+            wasDone = true
+        } else {
+            wasDone = false
+        }
+        
      
         if isStartMin == true {
             print("")
