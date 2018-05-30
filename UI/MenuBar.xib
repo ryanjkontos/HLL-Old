@@ -26,7 +26,6 @@
                 <outlet property="statusMenu" destination="n3t-Qc-pUZ" id="HwH-LX-rvH"/>
             </connections>
         </customObject>
-        <customObject id="dxx-1D-bhR" customClass="TimeTo" customModule="How_Long_Left_" customModuleProvider="target"/>
         <menu id="n3t-Qc-pUZ">
             <items>
                 <menuItem title="MB Text Line 1" enabled="NO" id="T6O-3E-MSc">
@@ -68,7 +67,7 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="GHL-EI-EOz"/>
-                <menuItem title="How Long Left (1.0.1 Dev 1)" enabled="NO" id="7Mn-ig-y0D">
+                <menuItem title="How Long Left (1.1 Dev)" enabled="NO" id="7Mn-ig-y0D">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
             </items>

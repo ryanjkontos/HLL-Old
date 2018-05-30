@@ -9,6 +9,7 @@
 //
 
 import EventKit
+import LaunchAtLogin
 
 let userData = UserDefaults.standard
 
@@ -203,6 +204,20 @@ class Welcome_CalendarAccess: welcomeNav {
 
 class Welcome_Preferences: welcomeNav {
     
+    @IBOutlet weak var launchAtLoginButton: NSButton!
+    
+    @IBAction func launchAtLoginButtonClicked(_ sender: NSButton) {
+        if sender.state.rawValue == 1 {
+            LaunchAtLogin.isEnabled = true
+        } else {
+           LaunchAtLogin.isEnabled = false
+        }
+    }
+    
+    
+    
+    
+    
     @IBAction func tenminbuttonclicked(_ sender: NSButton) {
         if sender.state.rawValue == 0 {
             print("Turning off:")
@@ -265,6 +280,11 @@ class Welcome_Preferences: welcomeNav {
         defaults.set(1, forKey: "autoAlert0")
         
         defaults.set(WelcomePrefsMenuBar.selectedItem?.title, forKey: "menuBarFormat")
+        
+        LaunchAtLogin.isEnabled = false
+        if launchAtLoginButton.state.rawValue == 1 {
+           launchAtLoginButton.setNextState()
+        }
         
     }
     

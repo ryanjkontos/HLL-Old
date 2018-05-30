@@ -10,6 +10,7 @@
 
 import Cocoa
 import HotKey
+import LaunchAtLogin
 
 class StatusMenuController: NSObject {
     
@@ -93,8 +94,18 @@ class StatusMenuController: NSObject {
         windowController.showWindow(self) 
     }
     
+    func launchCalAcess() {
+        let calAccessLaunch = calendardata.getCalendarAccess()
+        if calAccessLaunch == false {
+            notify.firstLine = "How Long Left does not have calendar access."
+            notify.secondLine = "Enable it in System Preferences."
+            notify.send()
+        }
+    }
+    
     
     override func awakeFromNib() {
+        
         
         
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
@@ -102,12 +113,7 @@ class StatusMenuController: NSObject {
         statusItem.image = icon
         statusItem.menu = statusMenu
         
-        let calAccessLaunch = calendardata.getCalendarAccess()
-        if calAccessLaunch == false {
-            notify.firstLine = "How Long Left does not have calendar access."
-            notify.secondLine = "Enable it in System Preferences."
-            notify.send()
-        }
+        
         let latestversion = (defaults.string(forKey: "setupComplete"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
@@ -120,11 +126,11 @@ class StatusMenuController: NSObject {
             refreshMenuBarButton.isHidden = true
             preferencesButton.isHidden = true
             
-            
+        launchCalAcess()
         showWelcomeView()
             
         } else {
-        
+        launchCalAcess()
             launchApp()
         
         }
@@ -223,6 +229,8 @@ class StatusMenuController: NSObject {
     }
     
     @objc func routineMenuBarUpdate(isStart: Bool) {
+        
+        setHotKey()
         
         let _ = calendar.updateCalendarData()
         

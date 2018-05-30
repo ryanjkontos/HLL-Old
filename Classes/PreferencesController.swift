@@ -12,6 +12,7 @@ import Foundation
 import AppKit
 import EventKit
 import Cocoa
+import LaunchAtLogin
 
 let defaults = UserDefaults.standard
 
@@ -126,6 +127,16 @@ class Prefs: NSViewController {
             
             
         }
+        
+        if LaunchAtLogin.isEnabled == true {
+            if launchAtLoginButton.state.rawValue == 0 {
+                launchAtLoginButton.setNextState()
+            }
+        } else {
+            if launchAtLoginButton.state.rawValue == 1 {
+               launchAtLoginButton.setNextState()
+            }
+        }
     }
     
     @IBAction func hotkeychange(_ sender: NSButton) {
@@ -161,6 +172,18 @@ class Prefs: NSViewController {
     
     @IBAction func prefsDone(_ sender: NSButton) {
         self.view.window?.close()
+        
+    }
+    
+    @IBOutlet weak var launchAtLoginButton: NSButton!
+    
+    @IBAction func launchAtLoginClicked(_ sender: NSButton) {
+        
+        if sender.state.rawValue == 1 {
+            LaunchAtLogin.isEnabled = true
+        } else {
+            LaunchAtLogin.isEnabled = false
+        }
         
     }
     

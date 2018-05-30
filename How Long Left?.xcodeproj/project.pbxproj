@@ -10,15 +10,18 @@
 		BF47A1A620A1904E00D98F4A /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47A1A520A1904E00D98F4A /* WelcomeController.swift */; };
 		BF72ED1D20AA681A00632763 /* MCHS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF72ED1C20AA681A00632763 /* MCHS.swift */; };
 		BF72ED1F20AA724700632763 /* AutomaticNotifcations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF72ED1E20AA724700632763 /* AutomaticNotifcations.swift */; };
+		BF77D08B20BE607A00E0EA88 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF77D08A20BE607A00E0EA88 /* LaunchAtLogin.framework */; };
+		BF77D08C20BE607D00E0EA88 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF77D08A20BE607A00E0EA88 /* LaunchAtLogin.framework */; };
+		BF77D08D20BE607D00E0EA88 /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF77D08A20BE607A00E0EA88 /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF781BF420A4723900F60E6C /* OutputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF781BF320A4723800F60E6C /* OutputHandler.swift */; };
 		BF853E26209D8584003374CC /* MenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF853E24209D8584003374CC /* MenuBar.xib */; };
 		BF853E27209D8584003374CC /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF853E25209D8584003374CC /* Preferences.storyboard */; };
 		BF853E31209D88B1003374CC /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E2E209D88B0003374CC /* Calendar.swift */; };
 		BF853E32209D88B1003374CC /* HLLNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E2F209D88B0003374CC /* HLLNotification.swift */; };
-		BF853E33209D88B1003374CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E30209D88B1003374CC /* AppDelegate.swift */; };
 		BF853E37209D88C2003374CC /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E34209D88C1003374CC /* MenuBarController.swift */; };
 		BF853E39209D88C2003374CC /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E36209D88C1003374CC /* PreferencesController.swift */; };
 		BFA81E6120A5B34100C4DB6C /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA81E6020A5B34100C4DB6C /* Welcome.storyboard */; };
+		BFAE4A0520BD6A57004E4FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAE4A0420BD6A57004E4FE8 /* AppDelegate.swift */; };
 		BFC2A55320A5DDA50015C97D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC2A55220A5DDA40015C97D /* Assets.xcassets */; };
 		BFEB559420AFE919008752FA /* HotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFEB559220AFE919008752FA /* HotKey.framework */; };
 		BFEB559620AFEA24008752FA /* HotKey.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFEB559220AFE919008752FA /* HotKey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -32,6 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BF77D08D20BE607D00E0EA88 /* LaunchAtLogin.framework in Embed Frameworks */,
 				BFEB559620AFEA24008752FA /* HotKey.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -54,6 +58,7 @@
 		BF52AD38209D7FA8007422CA /* How Long Left?.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "How Long Left?.entitlements"; sourceTree = "<group>"; };
 		BF72ED1C20AA681A00632763 /* MCHS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCHS.swift; sourceTree = "<group>"; };
 		BF72ED1E20AA724700632763 /* AutomaticNotifcations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticNotifcations.swift; sourceTree = "<group>"; };
+		BF77D08A20BE607A00E0EA88 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = SOURCE_ROOT; };
 		BF781BF320A4723800F60E6C /* OutputHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputHandler.swift; sourceTree = "<group>"; };
 		BF8223D820B6CB7B00A711B7 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		BF853E17209D8419003374CC /* How Long Left?-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "How Long Left?-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -62,10 +67,10 @@
 		BF853E28209D858E003374CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF853E2E209D88B0003374CC /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		BF853E2F209D88B0003374CC /* HLLNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLLNotification.swift; sourceTree = "<group>"; };
-		BF853E30209D88B1003374CC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF853E34209D88C1003374CC /* MenuBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
 		BF853E36209D88C1003374CC /* PreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 		BFA81E6020A5B34100C4DB6C /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		BFAE4A0420BD6A57004E4FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC2A55220A5DDA40015C97D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFEB00EB20B1994700975F0A /* How Long Left?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Long Left?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB559220AFE919008752FA /* HotKey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HotKey.framework; sourceTree = "<group>"; };
@@ -77,8 +82,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF77D08C20BE607D00E0EA88 /* LaunchAtLogin.framework in Frameworks */,
 				BFEC2F9020B6E29000304EA0 /* Cocoa.framework in Frameworks */,
 				BFEB559420AFE919008752FA /* HotKey.framework in Frameworks */,
+				BF77D08B20BE607A00E0EA88 /* LaunchAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +95,7 @@
 		BF7AB70720AFE716006BC1F6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BF853E30209D88B1003374CC /* AppDelegate.swift */,
+				BFAE4A0420BD6A57004E4FE8 /* AppDelegate.swift */,
 				BF853E34209D88C1003374CC /* MenuBarController.swift */,
 				BF781BF320A4723800F60E6C /* OutputHandler.swift */,
 				BF853E2E209D88B0003374CC /* Calendar.swift */,
@@ -136,6 +143,7 @@
 		BFEB559020AFE919008752FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF77D08A20BE607A00E0EA88 /* LaunchAtLogin.framework */,
 				BFEC2F8F20B6E29000304EA0 /* Cocoa.framework */,
 				BF8223D820B6CB7B00A711B7 /* ServiceManagement.framework */,
 				BFEB559220AFE919008752FA /* HotKey.framework */,
@@ -155,6 +163,7 @@
 				BF914AD62099393D00927006 /* Resources */,
 				BFA2AC7C209B21C400FB4490 /* Embed App Extensions */,
 				BF853E2D209D85AC003374CC /* Embed Frameworks */,
+				BF614EF420BD62BE00D0C408 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -218,14 +227,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BF614EF420BD62BE00D0C408 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\norigin_helper_path=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app\"\nhelper_dir=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nhelper_path=\"$helper_dir/LaunchAtLoginHelper.app\"\n\nrm -rf \"$helper_path\"\nmkdir -p \"$helper_dir\"\ncp -rf \"$origin_helper_path\" \"$helper_dir/\"\n\ndefaults write \"$helper_path/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper\"\ncodesign --force --entitlements=\"$CODE_SIGN_ENTITLEMENTS\" --sign=\"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" \"$helper_path\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BF914AD42099393D00927006 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAE4A0520BD6A57004E4FE8 /* AppDelegate.swift in Sources */,
 				BF72ED1F20AA724700632763 /* AutomaticNotifcations.swift in Sources */,
 				BF72ED1D20AA681A00632763 /* MCHS.swift in Sources */,
-				BF853E33209D88B1003374CC /* AppDelegate.swift in Sources */,
 				BF47A1A620A1904E00D98F4A /* WelcomeController.swift in Sources */,
 				BF853E32209D88B1003374CC /* HLLNotification.swift in Sources */,
 				BF853E39209D88C2003374CC /* PreferencesController.swift in Sources */,
@@ -354,6 +379,7 @@
 		BF914AE72099393F00927006 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Supporting Files/How Long Left?.entitlements";
@@ -364,6 +390,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -384,6 +411,7 @@
 		BF914AE82099393F00927006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Supporting Files/How Long Left?.entitlements";
@@ -394,6 +422,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

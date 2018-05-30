@@ -1,32 +1,26 @@
 //
 //  AppDelegate.swift
-//  How Long Left?
+//  test
 //
-//  Created by Ryan Kontos on 2/5/18.
+//  Created by Ryan Kontos on 29/5/18.
 //  Copyright © 2018 Ryan Kontos. All rights reserved.
 //
 
 import Cocoa
-import AppKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    
-    private func applicationDidFinishLaunching(aNotification: NSNotification){
-        
-        
-        
+
+
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Insert code here to initialize your application
     }
-    
-    
-    private func applicationWillTerminate(_ aNotification: NSNotification) {
+
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
-    
-    
-    
-    
+
 }
 
