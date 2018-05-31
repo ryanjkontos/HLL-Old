@@ -16,7 +16,7 @@ import LaunchAtLogin
 
 let defaults = UserDefaults.standard
 
-var cal = Calendar()
+var cal = eventData()
 var menuBar = StatusMenuController()
 
 class Preferences: NSWindowController {
@@ -37,6 +37,7 @@ class Prefs: NSViewController {
     @IBOutlet weak var autoAlert1: NSButton!
     @IBOutlet weak var autoAlert0: NSButton!
     
+    @IBOutlet weak var offButton: NSButton!
     @IBOutlet weak var optionWbutton: NSButton!
     @IBOutlet weak var commandTButton: NSButton!
     
@@ -46,8 +47,10 @@ class Prefs: NSViewController {
         let hotKeySetValue = (defaults.string(forKey: "setHotKey")!)
         if hotKeySetValue == "0" {
             optionWbutton.setNextState()
-        } else {
+        } else if hotKeySetValue == "1" {
             commandTButton.setNextState()
+        } else {
+            offButton.setNextState()
         }
         
         let tensetting = Int(defaults.string(forKey: "autoAlert10")!)!

@@ -224,16 +224,16 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jo6-pm-f40">
-                                <rect key="frame" x="159" y="309" width="309" height="44"/>
+                                <rect key="frame" x="141" y="311" width="329" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keyboard Shortcut" id="X6U-NF-JHS">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Notification Hot Key" id="X6U-NF-JHS">
                                     <font key="font" metaFont="systemSemibold" size="36"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NRq-9v-14B">
-                                <rect key="frame" x="39" y="267" width="533" height="36"/>
+                                <rect key="frame" x="39" y="273" width="533" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Choose the keyboard shortcut you want to trigger a notification that displays how long you have left." id="XfE-FM-gJ0">
                                     <font key="font" metaFont="system" size="14"/>
@@ -242,11 +242,11 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="kf1-9L-v5z">
-                                <rect key="frame" x="28" y="-15" width="555" height="4"/>
+                                <rect key="frame" x="28" y="-15" width="555" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <button identifier="0" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJR-Dv-es7">
-                                <rect key="frame" x="208" y="217" width="195" height="18"/>
+                                <rect key="frame" x="208" y="205" width="195" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="radio" title="Option + W (Recommended)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="PN9-cf-0a5">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -257,7 +257,7 @@
                                 </connections>
                             </button>
                             <button identifier="1" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9F-gN-xCo">
-                                <rect key="frame" x="208" y="192" width="108" height="18"/>
+                                <rect key="frame" x="208" y="180" width="108" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="radio" title="Command + T" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="hSZ-PL-l8b">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -268,7 +268,7 @@
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35p-UH-JAi">
-                                <rect key="frame" x="68" y="74" width="474" height="99"/>
+                                <rect key="frame" x="68" y="68" width="474" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="notifyPreview" id="Xu8-ue-Wbp"/>
                             </imageView>
@@ -285,6 +285,17 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="back:" target="lvh-9s-W85" id="xAc-eN-v7f"/>
+                                </connections>
+                            </button>
+                            <button identifier="2" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7z-KL-erx">
+                                <rect key="frame" x="208" y="229" width="42" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="radio" title="Off" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="poq-an-3N4">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="shortcut:" target="lvh-9s-W85" id="MlH-Fj-1Gf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -547,7 +558,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Vqg-2V-no1">
-                                <rect key="frame" x="36" y="299" width="528" height="5"/>
+                                <rect key="frame" x="36" y="299" width="528" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Qpl-gA-rXu">

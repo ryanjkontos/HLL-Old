@@ -1,0 +1,11 @@
+framework module Contains {
+  umbrella header "Contains.h"
+
+  export *
+  module * { export * }
+}
+
+module Contains.Swift {
+    header "Contains-Swift.h"
+    requires objc
+}

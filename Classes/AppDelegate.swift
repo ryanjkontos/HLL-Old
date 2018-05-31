@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  test
+//  How Long Left?
 //
 //  Created by Ryan Kontos on 29/5/18.
 //  Copyright © 2018 Ryan Kontos. All rights reserved.

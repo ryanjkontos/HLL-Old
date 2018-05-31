@@ -41,12 +41,14 @@ class StatusMenuController: NSObject {
     
     private var hotKey: HotKey? {
         didSet {
+            print("Didset!")
             guard let hotKey = hotKey else {
                 return
             }
             
             
             hotKey.keyDownHandler = { [weak self] in
+                print("Pressed")
                 let _ = calendar.updateCalendarData()
                 self?.doTimeToNotification()
                 self?.routineMenuBarUpdate(isStart: false)
@@ -54,7 +56,7 @@ class StatusMenuController: NSObject {
         }
     }
     
-    let calendardata = Calendar()
+    let calendardata = eventData()
     var calAccess = false
 
     @IBOutlet weak var statusMenu: NSMenu!
@@ -117,7 +119,7 @@ class StatusMenuController: NSObject {
         let latestversion = (defaults.string(forKey: "setupComplete"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
-        if latestversion != "1.0" {
+        if latestversion != "1.1" {
             
             menuOutput1.title = "Complete setup to use How Long Left."
             menuOutput2.isHidden = true
@@ -143,6 +145,9 @@ class StatusMenuController: NSObject {
     
     func setHotKey() {
         
+
+        print("setting HK")
+        
        let hotKeySetValue = (defaults.string(forKey: "setHotKey")!)
         
         if hotKeySetValue == "0" {
@@ -150,9 +155,12 @@ class StatusMenuController: NSObject {
             
           hotKey = HotKey(keyCombo: KeyCombo(key: .w, modifiers: [.option]))
             
-        } else {
+        } else if hotKeySetValue == "1"  {
             
             hotKey = HotKey(keyCombo: KeyCombo(key: .t, modifiers: [.command]))
+        } else {
+            hotKey = nil
+            print("Hot key is disabled")
         }
     }
     
@@ -166,7 +174,7 @@ class StatusMenuController: NSObject {
         refreshMenuBarButton.isHidden = false
         preferencesButton.isHidden = false
         setHotKey()
-        defaults.set("1.0", forKey: "setupComplete")
+        defaults.set("1.1", forKey: "setupComplete")
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
         icon?.isTemplate = true
         statusItem.image = icon
@@ -217,6 +225,7 @@ class StatusMenuController: NSObject {
     }
     
     @objc func updateSettings() {
+        
         setHotKey()
         OutputHandler.outputArchive.predictedMenuBarText = nil
         print("1")
@@ -229,8 +238,6 @@ class StatusMenuController: NSObject {
     }
     
     @objc func routineMenuBarUpdate(isStart: Bool) {
-        
-        setHotKey()
         
         let _ = calendar.updateCalendarData()
         
@@ -249,7 +256,6 @@ class StatusMenuController: NSObject {
         }
         
         menuBarItemUpdate()
-        
     }
     
     @IBAction func run(_ sender: NSMenuItem) {

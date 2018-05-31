@@ -1,5 +1,5 @@
 //
-//  Calendar.swift
+//  eventData.swift
 //  How Long Left?
 //
 //  Created by Ryan Kontos on 2/5/18.
@@ -11,7 +11,7 @@
 import Foundation
 import EventKit
 
-class Calendar {
+class eventData {
     
    private struct calData {
         static var titleOfCurrentEvent: String?
@@ -183,7 +183,7 @@ class Calendar {
     }
     
     func calAccessTrue() {
-        Calendar.calData.appHasCalendarAccess = true
+        eventData.calData.appHasCalendarAccess = true
 }
     
     // MARK: Return APIs which I kinda just tacked onto the old method of retreiving calendar data with the calData struct. Basically just functions that read calData and return the results.
@@ -267,7 +267,7 @@ class Calendar {
     }
         func appHasCalendarAccess() -> Bool? {
             let _ = getCalendarAccess()
-            return Calendar.calData.appHasCalendarAccess
+            return eventData.calData.appHasCalendarAccess
         }
     
 }

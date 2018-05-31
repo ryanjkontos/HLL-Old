@@ -16,7 +16,7 @@
 		BF781BF420A4723900F60E6C /* OutputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF781BF320A4723800F60E6C /* OutputHandler.swift */; };
 		BF853E26209D8584003374CC /* MenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF853E24209D8584003374CC /* MenuBar.xib */; };
 		BF853E27209D8584003374CC /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF853E25209D8584003374CC /* Preferences.storyboard */; };
-		BF853E31209D88B1003374CC /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E2E209D88B0003374CC /* Calendar.swift */; };
+		BF853E31209D88B1003374CC /* eventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E2E209D88B0003374CC /* eventData.swift */; };
 		BF853E32209D88B1003374CC /* HLLNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E2F209D88B0003374CC /* HLLNotification.swift */; };
 		BF853E37209D88C2003374CC /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E34209D88C1003374CC /* MenuBarController.swift */; };
 		BF853E39209D88C2003374CC /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF853E36209D88C1003374CC /* PreferencesController.swift */; };
@@ -54,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF178C2120BF8B7C007E1A11 /* Contains.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Contains.framework; sourceTree = "<group>"; };
 		BF47A1A520A1904E00D98F4A /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		BF52AD38209D7FA8007422CA /* How Long Left?.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "How Long Left?.entitlements"; sourceTree = "<group>"; };
 		BF72ED1C20AA681A00632763 /* MCHS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCHS.swift; sourceTree = "<group>"; };
@@ -65,7 +66,7 @@
 		BF853E24209D8584003374CC /* MenuBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuBar.xib; sourceTree = "<group>"; };
 		BF853E25209D8584003374CC /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		BF853E28209D858E003374CC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF853E2E209D88B0003374CC /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		BF853E2E209D88B0003374CC /* eventData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventData.swift; sourceTree = "<group>"; };
 		BF853E2F209D88B0003374CC /* HLLNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLLNotification.swift; sourceTree = "<group>"; };
 		BF853E34209D88C1003374CC /* MenuBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
 		BF853E36209D88C1003374CC /* PreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
@@ -98,7 +99,7 @@
 				BFAE4A0420BD6A57004E4FE8 /* AppDelegate.swift */,
 				BF853E34209D88C1003374CC /* MenuBarController.swift */,
 				BF781BF320A4723800F60E6C /* OutputHandler.swift */,
-				BF853E2E209D88B0003374CC /* Calendar.swift */,
+				BF853E2E209D88B0003374CC /* eventData.swift */,
 				BF72ED1E20AA724700632763 /* AutomaticNotifcations.swift */,
 				BF72ED1C20AA681A00632763 /* MCHS.swift */,
 				BF853E2F209D88B0003374CC /* HLLNotification.swift */,
@@ -143,6 +144,7 @@
 		BFEB559020AFE919008752FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF178C2120BF8B7C007E1A11 /* Contains.framework */,
 				BF77D08A20BE607A00E0EA88 /* LaunchAtLogin.framework */,
 				BFEC2F8F20B6E29000304EA0 /* Cocoa.framework */,
 				BF8223D820B6CB7B00A711B7 /* ServiceManagement.framework */,
@@ -255,7 +257,7 @@
 				BF853E32209D88B1003374CC /* HLLNotification.swift in Sources */,
 				BF853E39209D88C2003374CC /* PreferencesController.swift in Sources */,
 				BF853E37209D88C2003374CC /* MenuBarController.swift in Sources */,
-				BF853E31209D88B1003374CC /* Calendar.swift in Sources */,
+				BF853E31209D88B1003374CC /* eventData.swift in Sources */,
 				BF781BF420A4723900F60E6C /* OutputHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

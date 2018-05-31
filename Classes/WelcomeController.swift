@@ -58,11 +58,7 @@ class tabView: NSTabViewController {
         
     }
     
-    
-
    
-    
-    
 }
 
 class welcomeNav: NSViewController {
@@ -74,13 +70,11 @@ class welcomeNav: NSViewController {
     
 }
 
-
 class Welcome_Whatsnew: welcomeNav {
    
     @IBAction func back(_ sender: Any) {
         navTo(page: 0)
     }
-    
 }
 
 class Welcome_WelcometoHowLongLeft: welcomeNav {
@@ -178,8 +172,6 @@ class Welcome_CalendarAccess: welcomeNav {
                 
             }
         }
-            
-        
         
         @IBAction func calendarsUseAllChanged(_ sender: NSButton) {
             if calendarsUseAll.state.rawValue == 1 {
@@ -196,11 +188,7 @@ class Welcome_CalendarAccess: welcomeNav {
         @IBAction func popUpCalSelectChanged(_ sender: NSPopUpButton) {
             defaults.set(calendarsSelectPopUp.selectedItem!.title, forKey: "Calendar")
         }
-        
-        
-        
-        
-}
+    }
 
 class Welcome_Preferences: welcomeNav {
     
@@ -213,10 +201,6 @@ class Welcome_Preferences: welcomeNav {
            LaunchAtLogin.isEnabled = false
         }
     }
-    
-    
-    
-    
     
     @IBAction func tenminbuttonclicked(_ sender: NSButton) {
         if sender.state.rawValue == 0 {
@@ -258,9 +242,6 @@ class Welcome_Preferences: welcomeNav {
         }
     }
     
-    
-    // 5
-    
     @IBAction func back(_ sender: NSButton) {
         navTo(page: 4)
     }
@@ -285,7 +266,6 @@ class Welcome_Preferences: welcomeNav {
         if launchAtLoginButton.state.rawValue == 1 {
            launchAtLoginButton.setNextState()
         }
-        
     }
     
     @IBAction func showNextChanged(_ sender: Any) {
@@ -300,8 +280,6 @@ class Welcome_Preferences: welcomeNav {
      defaults.set(WelcomePrefsMenuBar.selectedItem?.title, forKey: "menuBarFormat")
         NotificationCenter.default.post(name: Notification.Name("settingChanged"), object: nil)
     }
-    
-    
 }
 
 class Welcome_YoureAllSet: welcomeNav {
@@ -310,14 +288,10 @@ class Welcome_YoureAllSet: welcomeNav {
     }
     
     @IBAction func Done(_ sender: NSButton) {
-        defaults.set("1.0", forKey: "setupComplete")
+        defaults.set("1.1", forKey: "setupComplete")
         NotificationCenter.default.post(name: Notification.Name("setupComplete"), object: nil)
       self.view.window?.close()
     }
-    
-    
-    
-    
 }
 
 

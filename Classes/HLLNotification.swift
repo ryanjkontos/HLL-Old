@@ -13,11 +13,10 @@ class HLLNotification {
     
     var firstLine = ""
     var secondLine = ""
-    
     func send() {
     let notification = NSUserNotification()
     notification.title = firstLine
     notification.informativeText = secondLine
-        NSUserNotificationCenter.default.deliver(notification)
+    NSUserNotificationCenter.default.deliver(notification)
     }
 }

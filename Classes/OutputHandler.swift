@@ -10,7 +10,7 @@
 
 import Foundation
 
-let calendar = Calendar()
+let calendar = eventData()
 let notify = HLLNotification()
 var autoNoto = automaticNotifcation()
 var menuText = ""
