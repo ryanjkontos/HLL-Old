@@ -10,9 +10,11 @@
 
 import Foundation
 
+
 class MCHS {
     
     func magdaleneNameOf(inputName: String) -> String {
+        
         var newName = inputName
         
         if inputName.range(of:"Pastoral Care") != nil {
@@ -56,7 +58,7 @@ class MCHS {
         }
 
         if inputName.range(of:"Maths") != nil {
-            newName = "Mathematics"
+            newName = "Maths"
         }
         
         if inputName.range(of:"PDHPE") != nil {

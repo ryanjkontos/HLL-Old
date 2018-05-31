@@ -71,7 +71,7 @@ class eventData {
         timesArray.removeAll()
         eventStore = EKEventStore()
         locationsArray.removeAll()
-        
+        calData.titleOfNextEvent = nil
 
         let calendars = eventStore.calendars(for: .event)
         
@@ -221,7 +221,7 @@ class eventData {
             
             if formatForDisplay == true {
                 if difstring == "1" {
-                    difstring = "less than 1 minute"
+                    difstring = "1 minute"
                 } else {
                   difstring = "\(difstring!) minutes"
                 }

@@ -88,8 +88,8 @@ class OutputHandler {
                 }
                 
                 if minRNF == "1" {
-                    menuTextMin = "<1 min"
-                    menuText = "<1 minute"
+                    menuTextMin = "1 min"
+                    menuText = "1 minute"
                     
                     predictedNextMenuBarTextFinalString = nil
                     
@@ -144,7 +144,7 @@ class OutputHandler {
             
             finalMenuText = "Done"
             autoNotify.sendDoneNotification()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
              NotificationCenter.default.post(name: Notification.Name("settingChanged"), object: nil)
                 }
             }
@@ -162,7 +162,7 @@ class OutputHandler {
             
             
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 NotificationCenter.default.post(name: Notification.Name("settingChanged"), object: nil)
             }
         }

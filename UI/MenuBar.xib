@@ -67,7 +67,7 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="GHL-EI-EOz"/>
-                <menuItem title="How Long Left (1.1 Dev)" enabled="NO" id="7Mn-ig-y0D">
+                <menuItem title="How Long Left 1.1" enabled="NO" id="7Mn-ig-y0D">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
             </items>

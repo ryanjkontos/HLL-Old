@@ -18,10 +18,13 @@ class WelcomeWindow: NSWindowController {
     func openWindow() {
         var welcomeWindowController : NSWindowController?
         
+        
+        
         let welcomeStoryboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Welcome"), bundle: nil)
         welcomeWindowController = welcomeStoryboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Welcome")) as? NSWindowController
         welcomeWindowController?.showWindow(self)
-        welcomeWindowController?.showWindow(nil)
+        
+        
     }
     
     
@@ -30,10 +33,6 @@ class WelcomeWindow: NSWindowController {
         window?.styleMask.remove(.resizable)
         NSApplication.shared.activate(ignoringOtherApps: true)
         
-        
-        let domain = Bundle.main.bundleIdentifier!
-        UserDefaults.standard.removePersistentDomain(forName: domain)
-        UserDefaults.standard.synchronize()
     
     }
 }
@@ -48,6 +47,9 @@ class tabView: NSTabViewController {
     override func viewWillAppear() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.nav), name: Notification.Name("welcomeNavigate"), object: nil)
+        
+        
+        
     }
         
     @objc func nav(data: Notification) {
@@ -62,7 +64,7 @@ class tabView: NSTabViewController {
 }
 
 class welcomeNav: NSViewController {
-    
+
     func navTo(page: Int) {
         NotificationCenter.default.post(name: Notification.Name("welcomeNavigate"), object: page)
     }
@@ -70,23 +72,30 @@ class welcomeNav: NSViewController {
     
 }
 
-class Welcome_Whatsnew: welcomeNav {
-   
-    @IBAction func back(_ sender: Any) {
-        navTo(page: 0)
+
+class Welcome_updateWelcome: welcomeNav {
+    @IBAction func next(_ sender: Any) {
+        navTo(page: 1)
     }
+    
 }
 
 class Welcome_WelcometoHowLongLeft: welcomeNav {
     
-    @IBAction func whatsnewbutton(_ sender: NSButton) {
-        navTo(page: 7)
-    }
     
     // 1
     
     @IBAction func next(_ sender: Any) {
         navTo(page: 1)
+    }
+    
+    override func viewWillAppear() {
+        
+        if defaults.string(forKey: "setupComplete") != nil {
+        if defaults.string(forKey: "setupComplete") == "1.0" {
+            navTo(page: 7)
+        }
+        }
     }
 }
 
@@ -95,7 +104,17 @@ class Welcome_LetsGetStarted: welcomeNav {
     // 2
     
     @IBAction func back(_ sender: NSButton) {
-        navTo(page: 0)
+        
+        
+        if defaults.string(forKey: "setupComplete") != nil {
+            if defaults.string(forKey: "setupComplete") == "1.0" {
+                navTo(page: 7)
+            } else {
+                navTo(page: 0)
+            }
+        } else {
+            navTo(page: 0)
+        }
     }
     
         

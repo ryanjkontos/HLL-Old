@@ -5,6 +5,8 @@
 //  Created by Ryan Kontos on 15/5/18.
 //  Copyright © 2018 Ryan Kontos. All rights reserved.
 //
+//  Figures out if a notification should be sent automatically, and also generates the "Done" notification.
+//
 
 import Foundation
 
