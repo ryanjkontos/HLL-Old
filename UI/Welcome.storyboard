@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
@@ -9,7 +9,7 @@
         <!--Window Controller-->
         <scene sceneID="9xl-YA-gIO">
             <objects>
-                <windowController storyboardIdentifier="Welcome" id="LHI-oA-oCE" customClass="WelcomeWindow" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Welcome" id="LHI-oA-oCE" customClass="WelcomeWindow" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" identifier="Welcome" title="How Long Left" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="G3o-UY-IfT">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -52,7 +52,7 @@
         <!--Tab View-->
         <scene sceneID="x3X-8z-hCu">
             <objects>
-                <tabViewController selectedTabViewItemIndex="0" tabStyle="unspecified" id="kXb-3W-8I4" customClass="tabView" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="unspecified" id="kXb-3W-8I4" customClass="tabView" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <tabViewItems>
                         <tabViewItem id="1gO-Tr-KK0"/>
                         <tabViewItem id="KN8-FT-u00"/>
@@ -92,7 +92,7 @@
         <!--Welcome Welcometo How Long Left-->
         <scene sceneID="PkB-cx-tr5">
             <objects>
-                <viewController id="MdT-Py-9NB" customClass="Welcome_WelcometoHowLongLeft" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MdT-Py-9NB" customClass="Welcome_WelcometoHowLongLeft" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Yia-eu-gJK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,7 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="hP1-4t-vEw">
-                                <rect key="frame" x="23" y="59" width="555" height="5"/>
+                                <rect key="frame" x="23" y="59" width="555" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvm-Iy-PKf">
@@ -148,7 +148,7 @@
         <!--Welcome Lets Get Started-->
         <scene sceneID="kFh-fU-srL">
             <objects>
-                <viewController id="3VW-Vh-75b" customClass="Welcome_LetsGetStarted" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3VW-Vh-75b" customClass="Welcome_LetsGetStarted" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="H2D-6R-Pj5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -212,7 +212,7 @@
         <!--Welcome Calendar Access-->
         <scene sceneID="7t4-B2-dU4">
             <objects>
-                <viewController id="lvh-9s-W85" customClass="Welcome_CalendarAccess" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lvh-9s-W85" customClass="Welcome_CalendarAccess" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yAs-4Q-KOz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -319,7 +319,7 @@
         <!--Welcome Calendars-->
         <scene sceneID="c4v-74-OED">
             <objects>
-                <viewController id="Fsn-Dp-ZWX" customClass="Welcome_Calendars" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fsn-Dp-ZWX" customClass="Welcome_Calendars" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="rpD-LS-jrY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -423,7 +423,7 @@
         <!--Welcome Preferences-->
         <scene sceneID="LI7-wx-UL3">
             <objects>
-                <viewController id="HKO-Tz-dog" customClass="Welcome_Preferences" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HKO-Tz-dog" customClass="Welcome_Preferences" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="jO3-Y2-R1s">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -606,7 +606,7 @@
         <!--Welcome Youre All Set-->
         <scene sceneID="lca-9g-W8k">
             <objects>
-                <viewController id="gJx-Pn-M3R" customClass="Welcome_YoureAllSet" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gJx-Pn-M3R" customClass="Welcome_YoureAllSet" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="uHD-IC-5F4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -670,7 +670,7 @@
         <!--Welcome update Welcome-->
         <scene sceneID="xfY-TC-QAj">
             <objects>
-                <viewController id="KoD-R1-LID" customClass="Welcome_updateWelcome" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KoD-R1-LID" customClass="Welcome_updateWelcome" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="CWf-Ax-6VO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
