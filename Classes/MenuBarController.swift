@@ -108,8 +108,6 @@ class StatusMenuController: NSObject {
     
     override func awakeFromNib() {
         
-        
-        
         let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
         icon?.isTemplate = true
         statusItem.image = icon
@@ -120,21 +118,17 @@ class StatusMenuController: NSObject {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.launchApp), name: Notification.Name("setupComplete"), object: nil)
         if latestversion != "1.1" {
-            
             menuOutput1.title = "Complete setup to use How Long Left."
             menuOutput2.isHidden = true
             setupButton.isHidden = false
             showNotificationsButton.isHidden = true
             refreshMenuBarButton.isHidden = true
             preferencesButton.isHidden = true
-            
         launchCalAcess()
         showWelcomeView()
-            
         } else {
         launchCalAcess()
             launchApp()
-        
         }
     }
     

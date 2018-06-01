@@ -72,7 +72,7 @@
 		BFA81E6020A5B34100C4DB6C /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		BFAE4A0420BD6A57004E4FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC2A55220A5DDA40015C97D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BFEB00EB20B1994700975F0A /* How Long Left?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How Long Left?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFEB00EB20B1994700975F0A /* How Long Left?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "How Long Left?.app"; path = "How Long Left.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB559220AFE919008752FA /* HotKey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HotKey.framework; sourceTree = "<group>"; };
 		BFEC2F8F20B6E29000304EA0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */

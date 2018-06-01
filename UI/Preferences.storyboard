@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
@@ -9,7 +9,7 @@
         <!--Window Controller-->
         <scene sceneID="heP-2U-SZn">
             <objects>
-                <windowController storyboardIdentifier="Prefs" id="tbT-ib-gW0" customClass="Preferences" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Prefs" id="tbT-ib-gW0" customClass="Preferences" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" identifier="Prefs" title="How Long Left" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="CWI-gM-4Qp">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -30,7 +30,7 @@
         <!--Prefs-->
         <scene sceneID="Hsb-oS-agW">
             <objects>
-                <viewController id="rpR-lz-XF5" customClass="Prefs" customModule="How_Long_Left_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rpR-lz-XF5" customClass="Prefs" customModule="How_Long_Left" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="JhB-wz-dDs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="392"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -105,7 +105,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45r-5c-Wjv">
                                 <rect key="frame" x="367" y="222" width="132" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Has 5 minutes left" bezelStyle="regularSquare" imagePosition="left" inset="2" id="7dZ-rc-U4n">
+                                <buttonCell key="cell" type="check" title="Has 5 minutes left" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7dZ-rc-U4n">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -116,7 +116,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNp-Le-Kn0">
                                 <rect key="frame" x="367" y="202" width="124" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Has 1 minute left" bezelStyle="regularSquare" imagePosition="left" inset="2" id="XJW-4e-uBl">
+                                <buttonCell key="cell" type="check" title="Has 1 minute left" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="XJW-4e-uBl">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -127,7 +127,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82c-me-BJJ">
                                 <rect key="frame" x="367" y="181" width="72" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Finishes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ej7-Dq-duh">
+                                <buttonCell key="cell" type="check" title="Finishes" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ej7-Dq-duh">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -138,7 +138,7 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ltC-xV-6FT">
                                 <rect key="frame" x="367" y="242" width="139" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Has 10 minutes left" bezelStyle="regularSquare" imagePosition="left" inset="2" id="igz-kU-Tcx">
+                                <buttonCell key="cell" type="check" title="Has 10 minutes left" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="igz-kU-Tcx">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
